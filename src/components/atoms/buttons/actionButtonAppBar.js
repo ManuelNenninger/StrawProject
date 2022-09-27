@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
+import Link from "next/link";
 
 export default function ContainedActionButton(props){
   const theme = useTheme();
@@ -54,7 +55,9 @@ export default function ContainedActionButton(props){
   return(
     <>
       <BootstrapButton {...props}>
-        {props.text}
+        {props.href ? <Link href={props.href}>
+          {props.text}
+        </Link> : props.text}
       </BootstrapButton>
     </>
   )

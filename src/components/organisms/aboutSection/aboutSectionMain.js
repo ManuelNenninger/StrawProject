@@ -9,33 +9,52 @@ export default function AboutSection() {
   return (
     <SectionWrapper secondaryBackgroundColor upperWave lowerWave>
       <Grid
+        id="About"
         container
         direction="column"
         justifyContent="flex-start"
         alignItems="center"
-        sx={{ px: {xs: 0, md: 15, lg: 20, xl:25}, }}
+        sx={{ px: {xs: 0, md: 20, lg: 30, xl: 40}, }}
       >
         <Grid item>
           <Typography
             variant="h1"
             align="center"
             gutterBottom
-            sx={{ }}
             color="text.secondary"
           >
             About
           </Typography>
         </Grid>
-        <Grid item sx={{  pt: 15 }}>
-          <Typography variant="h4" gutterBottom sx={{fontSize: {xs: "1.5rem", sm: "2.125rem"}}} color="text.secondary">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua.
-          </Typography>
+        <Grid item sx={{  pt: 15 }} >
+          <Typography variant="h5" gutterBottom color="text.secondary" sx={{pb: 2}}>
+            Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papier Halme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
+            {/*Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne von verschmutze oder weich gewordene Trinkhalme genervt sein zu müssen?*/}
+            {/*Brand soll Dir helfen dein Getränk genießen zu können, ohne Dir über verschmutze oder weich gewordene Strohhalme Sorgen machen zu müssen - all das,
+            während Du die Welt ein bischen besser machst.*/}
+            </Typography>
+            <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
+              Die Trinkhalme von Brand sind aus 100% kompostierbarer Reisstärke produziert. Sie weichen nicht auf wie Papier Halme, sind biologisch abbaubar und ungefährlich für Kinder.
+            <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
+              Ich beginne gerade erst meine reise mit Brand als Start-Up um meine Idee zu testen und Feedback zu sammeln.
+            </Typography>
+            {/*Du möchtest helfen die Umwelt zu schützen indem Du auf Plastik verzichtest?
+            Willst aber nicht Papier-Trinkhalme benutzen die nach nach 10 Minuten aufweichen
+            oder Glas-Halme die nicht nur leicht kaputt sondern auch gefährlich sind - vor allem für Kinder?*/}
+
+            {/*Uns hat es genervt, dass der Papierstrohhalm nach 10 Minuten aufgeweicht war und das Getränk ungenießbar wurde.
+            Der Metall-Strohhalm im restaurant war selten wirklich sauber und Glas-Strohhalme gehen nicht nur leicht kaputt sondern sind vor allem für Kinder gefährlich.
+            Frustriert von der Plastik alternative haben wir uns auf die Suche gemacht. - und Brand entwickelt.*/}
+            </Typography>
+            <Typography
+              variant="h5"
+              gutterBottom
+              sx={{pb: 2}}
+              //sx={{fontSize: {xs: "1.5rem", sm: "2.125rem"}}}
+              color="text.secondary"
+            >
+              Falls ich Dir also helfen konnten, dein Getränk nach einem sressigen Tag besser genießen zu können, lass es mich wissen!
+            </Typography>
         </Grid>
         <Grid item sx={{  width: "100%", pt: 5 }}>
           <Grid
@@ -51,6 +70,7 @@ export default function AboutSection() {
                 variant="contained"
                 size="large"
                 text="Order"
+                href="/preis"
               />
             </Grid>
             <Grid item xs={6}>

@@ -8,33 +8,26 @@ import LocalDrinkRoundedIcon from '@mui/icons-material/LocalDrinkRounded';
 import SanitizerRoundedIcon from '@mui/icons-material/SanitizerRounded';
 import BrokenImageRoundedIcon from '@mui/icons-material/BrokenImageRounded';
 import Grow from "@mui/material/Grow";
+import SvgIcon from "@mui/material/SvgIcon";
+import { useAppContext } from "../../../appContext";
 
 export default function BoxSx() {
   const theme = useTheme();
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
   //console.log("isInViewport1: ", isInViewport);
+  const value = useAppContext();
+  let { agreementGridContent } = value.content.agreementContent;
 
+  //Da in dem Conent Object keine Variablen declariert sind, wird hier dem String eine Componente zugewiesen.
+  //https://stackoverflow.com/questions/47717326/how-to-render-a-component-by-string-name
+  const icons = {
+    LocalDrinkRoundedIcon,
+    SanitizerRoundedIcon,
+    BrokenImageRoundedIcon,
+  }
 
-  const ContentArray = [
-    {
-      Icon: <LocalDrinkRoundedIcon sx={{fontSize: 60, mb: 2}} color="primary" />,
-      Titel: "Lorem Ipsum",
-      Describtion: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-    },
-    {
-      Icon: <SanitizerRoundedIcon sx={{fontSize: 60, mb: 2}} color="primary"/>,
-      Titel: "Lorem Ipsum",
-      Describtion: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
-    },
-    {
-      Icon: <BrokenImageRoundedIcon sx={{fontSize: 60, mb: 2}}  color="primary"/>,
-      Titel: "Lorem Ipsum",
-      Describtion: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna "
-    }
-  ];
-
-  const CellGrid = ({ Icon, Titel, Describtion }) => {
+  const CellGrid = ({ IconName, Titel, Describtion }) => {
     return (
       <>
         <Grid xs={12} md={4} item>
@@ -42,7 +35,7 @@ export default function BoxSx() {
             container
             direction="column"
             justifyContent="center"
-            alignItems="center"
+            alignItems="flex-start"
             spacing={0}
             sx={{'& > div': {
               //pt: 1,
@@ -52,7 +45,9 @@ export default function BoxSx() {
             // },
             }}
           >
-            <Grid item>{Icon} </Grid>
+            <Grid item>
+              <SvgIcon component={icons[IconName]}  sx={{fontSize: 60, mb: 2}} color="primary" />,
+            </Grid>
             <Grid item>
               <Typography variant="h6" gutterBottom color="text.secondary">
                 {Titel}
@@ -76,7 +71,7 @@ export default function BoxSx() {
           container
           direction="row"
           justifyContent="center"
-          alignItems="center"
+          alignItems="flex-start"
           //spacing={10}
           sx={{
             '& > div': {
@@ -85,7 +80,7 @@ export default function BoxSx() {
             },
           }}
         >
-          {ContentArray.map(function (ContentObject) {
+          {agreementGridContent.map(function (ContentObject) {
             return CellGrid(ContentObject);
           })}
         </Grid>
@@ -109,7 +104,7 @@ export default function BoxSx() {
       >
         <Grid item sx={{width: "100%"}}>
           <Typography align="center" variant="h2" gutterBottom color="text.secondary">
-            Lorem ipsum dolor sit amet
+            Vorteile von Brand
           </Typography>
         </Grid>
         <Grid item sx={{pt: 15}}>

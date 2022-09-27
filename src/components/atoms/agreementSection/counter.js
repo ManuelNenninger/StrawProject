@@ -38,16 +38,36 @@ export default function Counter({
           }}
         >
           <Grid item>
-            <Typography variant="h4" sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}>{numberThree}</Typography>
+            <Typography
+              variant="h4"
+              sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
+            >
+                {numberThree}
+            </Typography>
           </Grid>
           <Grid item >
-            <Typography variant="h4" sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}>{numberTwo}</Typography>
+          <Typography
+            variant="h4"
+            sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
+          >
+            {numberTwo}
+          </Typography>
           </Grid>
           <Grid item >
-            <Typography variant="h4" sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}>{numberOne}</Typography>
+          <Typography
+            variant="h4"
+            sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
+          >
+            {numberOne}
+          </Typography>
           </Grid>
           <Grid item >
-            <Typography variant="h4" sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}>mg</Typography>
+          <Typography
+            variant="h4"
+            sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
+          >
+            mg
+          </Typography>
           </Grid>
         </Grid>
         {/*<Button

@@ -9,6 +9,7 @@ import '../styles/globals.css';
 import Layout from "../src/components/layout";
 //So importierst Du css Styles. --> import "../styles/consoleLogDesignCss.css"
 import createEmotionCache from '../src/createEmotionCache';
+import { AppWrapper } from "../src/appContext";
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -26,9 +27,11 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <AppWrapper>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </AppWrapper>
       </ThemeProvider>
     </CacheProvider>
   );

@@ -11,33 +11,7 @@ import {  useRef } from "react";
 import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
 import Grow from "@mui/material/Grow";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
-
-const ContentArray = [
-  {
-    Number: 1,
-    Titel: "Order",
-    Describtion:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-  },
-  {
-    Number: 2,
-    Titel: "Test the product",
-    Describtion:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.. Lorem Ipsum2"
-  },
-  {
-    Number: 3,
-    Titel: "Give Feedback",
-    Describtion:
-      "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-  },
-  {
-    Number: 4,
-    Titel: "Order More",
-    Describtion:
-      "Lorem Ipsum4. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-  }
-];
+import { useAppContext } from "../../../appContext";
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
@@ -60,13 +34,15 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
 
 export default function BoxSx() {
   const theme = useTheme();
+  const value = useAppContext();
+  let { processCardArray } = value.content.processContent;
 
   const [selected, setSelected] = useState(1);
   const [trigger, settrigger] = useState(false);
   const [progress, setProgress] = useState(0);
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
-  console.log("isInViewport1: ", isInViewport);
+  //console.log("isInViewport1: ", isInViewport);
 
 
 //<----- Begin Timer for Step switch ----->
@@ -83,14 +59,14 @@ export default function BoxSx() {
       setProgress((oldProgress) => {
         if(oldProgress === 100){return 100}
         //Wenn man 4s auswählt, ist die animation zu langsam, um 100% anzuzeigen.
-        const prozentBisFull = (100 / 5000) * zahl;
+        const prozentBisFull = (100 / 9000) * zahl;
         //console.log("Es sind " + prozentBisFull + "% von4000 erreicht.");
         return prozentBisFull;
       });
 
 
       //Hier wird nach 5s selected gewechselt
-      if(zahl % 6000 === 0){
+      if(zahl % 10000 === 0){
         //console.log("100% erreicht: " + zahl);
         setProgress(100)
         zahl = 0;
@@ -170,7 +146,7 @@ export default function BoxSx() {
           justifyContent="center"
           alignItems="flex-start"
         >
-          {ContentArray.map(function (ContentObject) {
+          {processCardArray.map(function (ContentObject) {
             return InstructionBox(ContentObject);
           })}
         </Grid>
@@ -187,6 +163,7 @@ export default function BoxSx() {
      >
       <Grid
         ref={ref1}
+        id="How_it_works"
         container
         direction="column"
         justifyContent="flex-start"
@@ -195,7 +172,7 @@ export default function BoxSx() {
       >
         <Grid item>
           <Typography variant="h2" align="center" gutterBottom >
-          Lorem ipsum dolor sit
+            Teste unser Product
           </Typography>
           {/*<Button
             variant="text"
@@ -220,7 +197,7 @@ export default function BoxSx() {
               <ProcessInstruction />
             </Grid>
             <Grid item>
-              <ProcessContentCard ContentArray={ContentArray} selected={selected} progress={progress}/>
+              <ProcessContentCard ContentArray={processCardArray} selected={selected} progress={progress}/>
             </Grid>
           </Grid>
         </Grid>

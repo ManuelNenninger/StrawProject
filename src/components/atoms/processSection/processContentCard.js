@@ -6,6 +6,8 @@ import { CardActionArea } from "@mui/material";
 import Box from "@mui/material/Box";
 import LinearProgress from '@mui/material/LinearProgress';
 import { useTheme } from "@mui/material/styles";
+import  ActionButton from "../buttons/actionButton";
+import CardActions from '@mui/material/CardActions';
 
 const illustrationArray = {
         1: "Delivery-pana-2.svg",
@@ -32,13 +34,22 @@ export default function ActionAreaCard({ ContentArray, selected, progress }) {
             alt="Wie funktioniert es?"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div" color="text.secondary">
+            <Typography gutterBottom variant="h4" component="div" color="text.secondary">
               Schritt {selected}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="h6" color="text.secondary">
               {ContentArray[selected - 1].Describtion}
             </Typography>
           </CardContent>
+          <CardActions>
+            <ActionButton
+              fullWidth
+              variant="contained"
+              size="large"
+              text="Order"
+              href="/preis"
+            />
+          </CardActions>
         </CardActionArea>
       </Card>
     </Box>

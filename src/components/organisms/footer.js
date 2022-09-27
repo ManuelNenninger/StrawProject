@@ -32,7 +32,7 @@ export default function BoxSx() {
   const GridFunction = function (object) {
     return (
       <>
-        <Grid item sx={{ }}>
+        <Grid item  sx={{ }}>
           <Grid
             container
             direction="column"
@@ -141,8 +141,11 @@ export default function BoxSx() {
         alignItems="flex-start"
         sx={{pt: 3, pb: 5}}
       >
-        <Grid item xs={12} md={4} sx={{ }}>
-          <Typography variant="h4" gutterBottom>
+        <Grid item xs={12} md={4} sx={{pb: {xs: 5, md: 0} }}>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom>
             BrandName
           </Typography>
         </Grid>
@@ -150,7 +153,7 @@ export default function BoxSx() {
           <Grid
             container
             direction="row"
-            justifyContent="flex-end"
+            justifyContent={{xs: "center", md:"flex-end"}}
             alignItems="flex-start"
             spacing={8}
             sx={{}}

@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import ActionButton from "../atoms/buttons/actionButtonAppBar";
+import Link from "next/link";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -33,6 +34,21 @@ ElevationScroll.propTypes = {
   window: PropTypes.func
 };
 
+const handleClick = (event) => {
+  let anchorId = ('#' + event.target.value);
+  console.log(anchorId);
+  const anchor = (document.querySelector(anchorId));
+
+  if (anchor) {
+    anchor.scrollIntoView();
+    //Safari unterstuetzt keine options
+    // anchor.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: 'start',
+    // });
+  }
+};
+
 export default function ElevateAppBar(props) {
   return (
     <React.Fragment>
@@ -47,11 +63,13 @@ export default function ElevateAppBar(props) {
           <Toolbar
             sx={{width: "100%", maxWidth: 1680, mx: "auto"}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Brand
+              <Link href="/">
+                Brand
+              </Link>
             </Typography>
-            <ActionButton variant="outlined" text="About" />
-            <ActionButton variant="outlined" text="How it works" />
-            <ActionButton variant="contained" text="Buy" />
+            <ActionButton variant="outlined" text="About" value="About" onClick={handleClick}/>
+            <ActionButton variant="outlined" text="How it works" value="How_it_works" onClick={handleClick} />
+            <ActionButton variant="contained" text="Buy" href="/preis" />
           </Toolbar>
         </AppBar>
       </ElevationScroll>

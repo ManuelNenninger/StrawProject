@@ -3,14 +3,15 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import HeroContentText from "./heroContentText";
 import ActionButton from "../buttons/actionButton"
 import { useTheme } from '@mui/material/styles';
+import { useAppContext } from "../../../appContext";
 
 
 export default function HeroDescribtion(props) {
-  let { heroTitel, heroDescribtion } = HeroContentText();
   const theme = useTheme();
+  const value = useAppContext();
+  let { heroContent } = value.content;
 
   return (
     <>
@@ -24,17 +25,17 @@ export default function HeroDescribtion(props) {
         >
           <Grid item >
             <Typography
-            variant="h1"
+            variant="h2"
             gutterBottom
-            sx={{ fontSize: { xs: "3.75rem", lg: "5.375rem"}}}
+            //sx={{ fontSize: { xs: "3.75rem", lg: "5.375rem"}}}
 
             >
-              {heroTitel}
+              {heroContent.heroTitel}
             </Typography>
           </Grid>
           <Grid item >
-            <Typography variant="h3" gutterBottom sx={{ fontSize: "1.375rem" }}>
-              {heroDescribtion}
+            <Typography variant="h5" gutterBottom sx={{  }}>
+              {heroContent.heroDescribtion}
             </Typography>
           </Grid>
           <Grid item sx={{ width: "100%", pt: 2 }}>
@@ -47,7 +48,7 @@ export default function HeroDescribtion(props) {
                 spacing={3}
               >
                 <Grid item md={6} xs={12}>
-                  <ActionButton fullWidth variant="contained" size="large" text="Order" secondaryColor/>
+                  <ActionButton fullWidth variant="contained" size="large" text="Order" secondaryColor href="/preis"/>
                 </Grid>
                 <Grid item md={6} xs={12}>
                   <ActionButton fullWidth variant="outlined" size="large" text="More information" secondaryColor/>

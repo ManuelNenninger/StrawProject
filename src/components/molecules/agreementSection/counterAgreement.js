@@ -59,7 +59,7 @@ export default function BoxSx() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{ backgroundColor: theme.palette.primary.main, border: 1,  borderColor: 'secondary.main', py: {xs: 1, md: 0}, boxShadow: 3 }}
+        sx={{ backgroundColor: theme.palette.primary.main, border: 1,  borderColor: 'secondary.main', py: {xs: 1, md: 2}, boxShadow: 3 }}
       >
         <Grid item sx={{ }}>
           <Grid
@@ -69,8 +69,13 @@ export default function BoxSx() {
             alignItems="center"
           >
             <Grid item sx={{}}>
-              <Typography variant="h2" align="center" sx={{fontSize: {xs: "3rem", md: "3.75rem"}}} >
-                Lorem Ipsum
+              <Typography
+                variant="h4"
+                align="center"
+                //sx={{fontSize: {xs: "3rem", md: "3.75rem"}}}
+                sx={{px: 3, fontWeight: "300"}}
+              >
+                Jeder Strohhalm spart Plastik.
               </Typography>
             </Grid>
             <Grid item ref={ref1} sx={{  }}>
