@@ -1,14 +1,24 @@
+import * as React from 'react';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useTheme } from '@mui/material/styles';
 import ActionButton from "../buttons/actionButton";
-
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import OrderDialog from "./OrderDialog";
 
 export default function PriceCard (props) {
+  const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   let { price, order } = props;
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -65,9 +75,11 @@ export default function PriceCard (props) {
           variant="contained"
           size="large"
           text="Order"
+          onClick={handleClickOpen}
         />
         </Grid>
       </Grid>
+      <OrderDialog open={open} handleClose={handleClose} order={order}/>
     </>
   );
 };

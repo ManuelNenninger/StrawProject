@@ -21,8 +21,20 @@ export default function MyApp(props) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Rice Straws</title>
+        <title>Strohhalm aus Reisstärke - Umweltfreundliche alternative zu Plastik</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta name="robots" content="all" />
+        <meta name="google" content="notranslate" />
+        <meta name="title" content="Strohhalm aus Reisstärke - Umweltfreundliche alternative zu Plastik" key="title" />
+        <meta property="og:title" content="Strohhalm aus Reisstärke - Umweltfreundliche alternative zu Plastik"  />
+        <meta name="description" content="Eine alternative zu deinem Plastik Strohhalm - Strohhalm aus Reisstärke" key="desc" />
+        <meta property="og:description" content="Eine alternative zu deinem Plastik Strohhalm - Strohhalm aus Reisstärke" />
+        <meta name="site_name" content="Rice Straw" key="name"/>
+        <meta name="type" content="website" key="type"/>
+        <meta property="og:site_name" content="Rice Straw" />
+        <meta property="og:type" content="website"/>
+        <link rel="canonical" href=""/>
+        <meta name="keywords" content="plastik strohhalm alternative, papier strohhalm, reis strohhalm, trinkhalm für kinder, bio strohhalm, kompostierbar strohhalm"/>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

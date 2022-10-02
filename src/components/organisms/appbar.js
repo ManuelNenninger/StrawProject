@@ -64,7 +64,9 @@ export default function ElevateAppBar(props) {
             sx={{width: "100%", maxWidth: 1680, mx: "auto"}}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Link href="/">
-                Brand
+                <a>
+                  Brand
+                </a>
               </Link>
             </Typography>
             <ActionButton variant="outlined" text="About" value="About" onClick={handleClick}/>

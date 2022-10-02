@@ -1,8 +1,12 @@
-import AppBar from "./organisms/appbar";
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Footer from "./organisms/footer"
-
+import dynamic from 'next/dynamic'
+//AbbBar muss aufgrund eines Bugs Client Side gerenderd werden. Nicht pre-rendered.
+const AppBar = dynamic(
+    () => import('./organisms/appbar'),
+    { ssr: false }
+)
 export default function Layout(props){
   const theme = useTheme();
 

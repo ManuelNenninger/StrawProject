@@ -27,6 +27,7 @@ export default function HeroDescribtion(props) {
             <Typography
             variant="h2"
             gutterBottom
+            component="h1"
             //sx={{ fontSize: { xs: "3.75rem", lg: "5.375rem"}}}
 
             >
@@ -34,7 +35,7 @@ export default function HeroDescribtion(props) {
             </Typography>
           </Grid>
           <Grid item >
-            <Typography variant="h5" gutterBottom sx={{  }}>
+            <Typography variant="h5" component="h2" gutterBottom sx={{  }}>
               {heroContent.heroDescribtion}
             </Typography>
           </Grid>

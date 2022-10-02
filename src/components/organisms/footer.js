@@ -12,18 +12,17 @@ import SectionWrapper from "../atoms/wrapperElements/sectionWrapper"
 
 const FooterContent = [
   {
-    titel: "Quick Links",
+    titel: "Service",
     listContent: [
-      { describtion: "lala1", link: "https://www.google.com/" },
-      { describtion: "lala2", link: "https://www.google.com/" },
-      { describtion: "lala3", link: "https://www.google.com/" }
+      { describtion: "Versand", link: "/versand" },
+      { describtion: "FAQ", link: "/faq" },
     ]
   },
   {
-    titel: "Support",
+    titel: "Rechtliches",
     listContent: [
-      { describtion: "lala1", link: "https://www.google.com/" },
-      { describtion: "lala2", link: "https://www.google.com/" }
+      { describtion: "Impressum", link: "/impressum" },
+      { describtion: "Datenschutzerklährung", link: "/datenschutz" }
     ]
   }
 ];
@@ -48,7 +47,9 @@ export default function BoxSx() {
               return (
                 <Grid item>
                   <Link href={listObject.link} color="secondary.main" variant="subtitle1">
-                    {listObject.describtion}
+                    <a>
+                      {listObject.describtion}
+                    </a>
                   </Link>
                 </Grid>
               );

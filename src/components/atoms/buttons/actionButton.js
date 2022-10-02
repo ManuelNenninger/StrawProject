@@ -76,7 +76,9 @@ export default function ContainedActionButton(props){
     <>
       <BootstrapButton {...props}>
         {props.href ? <Link href={props.href}>
-          {props.text}
+          <a>
+            {props.text}
+          </a>
         </Link> : props.text}
       </BootstrapButton>
     </>
