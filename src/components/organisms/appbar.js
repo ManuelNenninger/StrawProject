@@ -62,16 +62,16 @@ export default function ElevateAppBar(props) {
         >
           <Toolbar
             sx={{width: "100%", maxWidth: 1680, mx: "auto"}}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: "'Comfortaa', cursiv", fontWeight: "600" }}>
               <Link href="/">
                 <a>
-                  Brand
+                  Risao
                 </a>
               </Link>
             </Typography>
-            <ActionButton variant="outlined" text="About" value="About" onClick={handleClick}/>
+            <ActionButton variant="outlined" text="Über mich" value="About" onClick={handleClick}/>
             <ActionButton variant="outlined" text="How it works" value="How_it_works" onClick={handleClick} />
-            <ActionButton variant="contained" text="Buy" href="/preis" />
+            <ActionButton variant="contained" text="Bestellen" href="/preis" />
           </Toolbar>
         </AppBar>
       </ElevationScroll>

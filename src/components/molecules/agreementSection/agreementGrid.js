@@ -104,7 +104,7 @@ export default function BoxSx() {
       >
         <Grid item sx={{width: "100%"}}>
           <Typography align="center" variant="h2" gutterBottom color="text.secondary">
-            Vorteile von Brand
+            Vorteile von Risao
           </Typography>
         </Grid>
         <Grid item sx={{pt: 15}}>

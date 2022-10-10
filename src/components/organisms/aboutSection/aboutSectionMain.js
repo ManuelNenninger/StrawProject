@@ -28,16 +28,13 @@ export default function AboutSection() {
         </Grid>
         <Grid item sx={{  pt: 15 }} >
           <Typography variant="h5" gutterBottom color="text.secondary" sx={{pb: 2}}>
-            Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papier Halme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
+            Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papierhalme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
             {/*Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne von verschmutze oder weich gewordene Trinkhalme genervt sein zu müssen?*/}
             {/*Brand soll Dir helfen dein Getränk genießen zu können, ohne Dir über verschmutze oder weich gewordene Strohhalme Sorgen machen zu müssen - all das,
             während Du die Welt ein bischen besser machst.*/}
             </Typography>
             <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
-              Die Trinkhalme von Brand sind aus 100% kompostierbarer Reisstärke produziert. Sie weichen nicht auf wie Papier Halme, sind biologisch abbaubar und ungefährlich für Kinder.
-            <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
-              Ich beginne gerade erst meine reise mit Brand als Start-Up um meine Idee zu testen und Feedback zu sammeln.
-            </Typography>
+              Die Trinkhalme von Risao sind aus 100% kompostierbarer Reisstärke produziert. Sie weichen nicht wie Papierhalme auf, sind biologisch abbaubar und ungefährlich für Kinder.
             {/*Du möchtest helfen die Umwelt zu schützen indem Du auf Plastik verzichtest?
             Willst aber nicht Papier-Trinkhalme benutzen die nach nach 10 Minuten aufweichen
             oder Glas-Halme die nicht nur leicht kaputt sondern auch gefährlich sind - vor allem für Kinder?*/}
@@ -53,7 +50,8 @@ export default function AboutSection() {
               //sx={{fontSize: {xs: "1.5rem", sm: "2.125rem"}}}
               color="text.secondary"
             >
-              Falls ich Dir also helfen konnten, dein Getränk nach einem sressigen Tag besser genießen zu können, lass es mich wissen!
+              Ich beginne gerade meine Reise mit Risao als Start-Up, um meine Idee zu testen und Feedback zu sammeln.
+              Falls ich Dir also helfen konnte, Dein Getränk nach einem stressigem Tag besser genießen zu können, lass es mich wissen!
             </Typography>
         </Grid>
         <Grid item sx={{  width: "100%", pt: 5 }}>

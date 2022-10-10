@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import ActionButton from "../buttons/actionButton"
 import { useTheme } from '@mui/material/styles';
 import { useAppContext } from "../../../appContext";
-
+import HighlighterText from "../wrapperElements/highlighterText";
 
 export default function HeroDescribtion(props) {
   const theme = useTheme();
@@ -32,7 +32,11 @@ export default function HeroDescribtion(props) {
 
             >
               {heroContent.heroTitel}
+              <HighlighterText>
+                nur besser
+              </HighlighterText>
             </Typography>
+
           </Grid>
           <Grid item >
             <Typography variant="h5" component="h2" gutterBottom sx={{  }}>
@@ -49,10 +53,10 @@ export default function HeroDescribtion(props) {
                 spacing={3}
               >
                 <Grid item md={6} xs={12}>
-                  <ActionButton fullWidth variant="contained" size="large" text="Order" secondaryColor href="/preis"/>
+                  <ActionButton fullWidth variant="contained" size="large" text="Bestellen" secondaryColor href="/preis"/>
                 </Grid>
                 <Grid item md={6} xs={12}>
-                  <ActionButton fullWidth variant="outlined" size="large" text="More information" secondaryColor/>
+                  <ActionButton fullWidth variant="outlined" size="large" text="Mehr Informationen" secondaryColor/>
                 </Grid>
               </Grid>
             </Box>

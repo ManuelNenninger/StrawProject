@@ -147,7 +147,9 @@ export default function BoxSx() {
             variant="h4"
             align="center"
             gutterBottom>
-            BrandName
+            <Typography variant="h4" color="secondary.main" component="div" sx={{ flexGrow: 1, fontFamily: "'Comfortaa', cursiv", fontWeight: "600" }}>
+              Risao
+            </Typography>
           </Typography>
         </Grid>
         <Grid item xs={12} md={8} sx={{ }}>
