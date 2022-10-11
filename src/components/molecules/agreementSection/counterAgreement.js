@@ -73,7 +73,15 @@ export default function BoxSx() {
                 variant="h4"
                 align="center"
                 //sx={{fontSize: {xs: "3rem", md: "3.75rem"}}}
-                sx={{px: 3, fontWeight: "300"}}
+                sx={{px: 3, fontWeight: "300", display: {xs: "none", sm: "block"}}}
+              >
+                Jeder Strohhalm spart Plastik.
+              </Typography>
+              <Typography
+                variant="h4"
+                align="center"
+                //sx={{fontSize: {xs: "3rem", md: "3.75rem"}}}
+                sx={{px: 3, fontWeight: "300", display: {xs: "block", sm: "none"}}}
               >
                 Jeder Strohhalm spart Plastik.
               </Typography>

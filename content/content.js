@@ -55,7 +55,7 @@ let contentObject = {
       },
       {
         Number: 4,
-        Titel: "Du willst mehr?",
+        Titel: "Mehr?",
         Describtion:
           "Wir stehen erst am Anfang. Mit Deiner Meinung werden wir das Produkt konstant verbessern. Möchtest Du informiert werden, wenn Wir Deine Meinung in unser Produkt mit einfließen lassen? Dann hinterlass uns Deine Mail!"
       }

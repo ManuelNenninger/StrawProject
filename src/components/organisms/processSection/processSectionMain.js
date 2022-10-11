@@ -171,7 +171,10 @@ export default function BoxSx() {
         sx={{}}
       >
         <Grid item>
-          <Typography variant="h2" align="center" gutterBottom >
+          <Typography variant="h2" align="center" gutterBottom sx={{display: {xs: "none", sm: "block"}}}>
+            Teste unser Product
+          </Typography>
+          <Typography variant="h3" align="center" gutterBottom sx={{display: {xs: "block", sm: "none"}}}>
             Teste unser Product
           </Typography>
           {/*<Button

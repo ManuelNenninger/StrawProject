@@ -7,7 +7,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import ActionButton from "../atoms/buttons/actionButtonAppBar";
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import Link from "next/link";
+import Menu from '@mui/material/Menu';
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -36,7 +40,7 @@ ElevationScroll.propTypes = {
 
 const handleClick = (event) => {
   let anchorId = ('#' + event.target.value);
-  console.log(anchorId);
+  console.log(event.target.value);
   const anchor = (document.querySelector(anchorId));
 
   if (anchor) {
@@ -49,7 +53,65 @@ const handleClick = (event) => {
   }
 };
 
-export default function ElevateAppBar(props) {
+export default function ElevateAppBar(props){
+const [anchorElNav, setAnchorElNav] = React.useState(null)
+
+  const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const ResponsiveMenu = (props) =>{
+    return(
+      <>
+      <IconButton
+      size="large"
+      aria-label="account of current user"
+      aria-controls="menu-appbar"
+      aria-haspopup="true"
+      onClick={handleOpenNavMenu}
+      color="inherit"
+    >
+      <MenuIcon />
+    </IconButton>
+    <Menu
+      id="menu-appbar"
+      anchorEl={anchorElNav}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'right',
+      }}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={Boolean(anchorElNav)}
+      onClose={handleCloseNavMenu}
+      sx={{
+        display: { xs: 'block', md: 'none' },
+      }}
+    >
+      <Link href="/preis">
+        <MenuItem onClick={handleCloseNavMenu} >
+            <Typography textAlign="center">Bestellen</Typography>
+        </MenuItem>
+      </Link>
+      <MenuItem value="How_it_works" onClick={handleCloseNavMenu}>
+        <Typography  textAlign="center">How it works</Typography>
+      </MenuItem>
+      <MenuItem value="About" onClick={handleCloseNavMenu}>
+        <Typography textAlign="center">Über mich</Typography>
+      </MenuItem>
+    </Menu>
+      </>
+    )
+  }
+
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -69,9 +131,14 @@ export default function ElevateAppBar(props) {
                 </a>
               </Link>
             </Typography>
-            <ActionButton variant="outlined" text="Über mich" value="About" onClick={handleClick}/>
-            <ActionButton variant="outlined" text="How it works" value="How_it_works" onClick={handleClick} />
-            <ActionButton variant="contained" text="Bestellen" href="/preis" />
+            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+              <ResponsiveMenu />
+            </Box>
+            <Box sx={{display: {xs: "none", md: "block"}}}>
+              <ActionButton variant="outlined" text="Über mich" value="About" onClick={handleClick}/>
+              <ActionButton variant="outlined" text="How it works" value="How_it_works" onClick={handleClick} />
+              <ActionButton variant="contained" text="Bestellen" href="/preis" />
+            </Box>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

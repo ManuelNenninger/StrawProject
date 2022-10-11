@@ -24,6 +24,22 @@ export default function HeroDescribtion(props) {
     setOpen(false);
   };
 
+  const ResponsiveTypography = (props) => {
+
+    return(
+      <Typography
+      variant={props.variant}
+      gutterBottom
+      component="h1"
+      sx={{fontWeight: "300"}}
+      >
+        {heroContent.heroTitel}
+        <HighlighterText>
+          nur besser
+        </HighlighterText>
+      </Typography>
+    )
+  }
   return (
     <>
       <Box sx={{}}>
@@ -35,19 +51,12 @@ export default function HeroDescribtion(props) {
           sx={{ pr: { xs: "none", md: 15 }, mt: {xs: 10, md: 0} }}
         >
           <Grid item >
-            <Typography
-            variant="h2"
-            gutterBottom
-            component="h1"
-            //sx={{ fontSize: { xs: "3.75rem", lg: "5.375rem"}}}
-
-            >
-              {heroContent.heroTitel}
-              <HighlighterText>
-                nur besser
-              </HighlighterText>
-            </Typography>
-
+            <Box sx={{display: {xs: "none", sm: "block"}}} >
+              <ResponsiveTypography variant="h2" />
+            </Box>
+            <Box sx={{display: {xs: "block", sm: "none"}}} >
+              <ResponsiveTypography variant="h3" />
+            </Box>
           </Grid>
           <Grid item >
             <Typography variant="h5" component="h2" gutterBottom sx={{  }}>

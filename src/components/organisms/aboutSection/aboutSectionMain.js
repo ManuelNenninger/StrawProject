@@ -39,19 +39,11 @@ export default function AboutSection() {
         <Grid item sx={{  pt: 15 }} >
           <Typography variant="h5" gutterBottom color="text.secondary" sx={{pb: 2}}>
             Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papierhalme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
-            {/*Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne von verschmutze oder weich gewordene Trinkhalme genervt sein zu müssen?*/}
-            {/*Brand soll Dir helfen dein Getränk genießen zu können, ohne Dir über verschmutze oder weich gewordene Strohhalme Sorgen machen zu müssen - all das,
-            während Du die Welt ein bischen besser machst.*/}
+
             </Typography>
             <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
               Die Trinkhalme von Risao sind aus 100% kompostierbarer Reisstärke produziert. Sie weichen nicht wie Papierhalme auf, sind biologisch abbaubar und ungefährlich für Kinder.
-            {/*Du möchtest helfen die Umwelt zu schützen indem Du auf Plastik verzichtest?
-            Willst aber nicht Papier-Trinkhalme benutzen die nach nach 10 Minuten aufweichen
-            oder Glas-Halme die nicht nur leicht kaputt sondern auch gefährlich sind - vor allem für Kinder?*/}
 
-            {/*Uns hat es genervt, dass der Papierstrohhalm nach 10 Minuten aufgeweicht war und das Getränk ungenießbar wurde.
-            Der Metall-Strohhalm im restaurant war selten wirklich sauber und Glas-Strohhalme gehen nicht nur leicht kaputt sondern sind vor allem für Kinder gefährlich.
-            Frustriert von der Plastik alternative haben wir uns auf die Suche gemacht. - und Brand entwickelt.*/}
             </Typography>
             <Typography
               variant="h5"
@@ -72,7 +64,7 @@ export default function AboutSection() {
             alignItems="center"
             spacing={3}
           >
-            <Grid item xs={6}>
+            <Grid item md={6} xs={12}>
               <ActionButton
                 fullWidth
                 variant="contained"
@@ -81,7 +73,7 @@ export default function AboutSection() {
                 href="/preis"
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6} xs={12}>
               <ActionButton
                 fullWidth
                 variant="outlined"
