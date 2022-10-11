@@ -28,10 +28,10 @@ const FooterContent = [
 ];
 
 export default function BoxSx() {
-  const GridFunction = function (object) {
+  const GridFunction = function (object, index) {
     return (
       <>
-        <Grid item  sx={{ }}>
+        <Grid item  sx={{ }} key={"GridFunction" + index}>
           <Grid
             container
             direction="column"
@@ -43,9 +43,9 @@ export default function BoxSx() {
                 {object.titel}
               </Typography>
             </Grid>
-            {object.listContent.map(function (listObject) {
+            {object.listContent.map(function (listObject, index) {
               return (
-                <Grid item>
+                <Grid item key={"listIndex" + index}>
                   <Link href={listObject.link} color="secondary.main" variant="subtitle1">
                     <a>
                       {listObject.describtion}
@@ -161,8 +161,8 @@ export default function BoxSx() {
             spacing={8}
             sx={{}}
           >
-            {FooterContent.map(function (object) {
-              return GridFunction(object);
+            {FooterContent.map(function (object, index) {
+              return GridFunction(object, index);
             })}
             <SocialGrid />
           </Grid>

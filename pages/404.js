@@ -29,6 +29,7 @@ export default function FourOhFour() {
                 width={230}
                 height={100}
                 layout="responsive"
+                alt="404 - Diese Seite exestiert nicht"
               />
             </Box>
           </Box>
