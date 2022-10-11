@@ -32,7 +32,16 @@ export default function BoxSx() {
           gutterBottom
           variant="h2"
           component="div"
-          sx={{pb: {xs: 5, md: 10}, pt: {xs: 5, md: 0}}}
+          sx={{display: {xs: "none", sm: "block"}, pb: {xs: 1, md: 10}, pt: {xs: 5, md: 0}}}
+        >
+          Preisübersicht
+        </Typography>
+        <Typography
+          align="center"
+          gutterBottom
+          variant="h3"
+          component="div"
+          sx={{display: {xs: "block", sm: "none"}, fontWeight: "300", pb: {xs: 0, md: 10}, pt: {xs: 5, md: 0}}}
         >
           Preisübersicht
         </Typography>
