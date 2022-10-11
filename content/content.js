@@ -3,7 +3,7 @@ let contentObject = {
   //----------------------------- Hero Content ---------------------
   heroContent: {
     heroTitel:
-    "Eine Alternative zu deinem Plastikstrohhalm - ",
+    "Eine Alternative zu deinem Plastik Strohhalm - ",
     //"Mach Dir keine Sorgen über die Umwelt, während Du dein Getränk genießt.",
     //"Ein Strohhalm, der die Welt ein bischen besser macht.",
     heroDescribtion:

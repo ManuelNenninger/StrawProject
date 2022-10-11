@@ -20,7 +20,7 @@ export default function SectionWrapper(props){
           minHeight: footer ? "none" : "50vh",
           maxWidth: "1680px",
           backgroundColor: secondaryBackgroundColor ? theme.palette.secondary.main : theme.palette.primary.main,
-          px: 6,
+          px: {xs: 3,  md:6},
         }}
       >
       {props.children}

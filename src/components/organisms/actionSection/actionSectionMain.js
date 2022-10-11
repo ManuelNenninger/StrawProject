@@ -17,7 +17,7 @@ export default function HeroSection() {
       sx={{
         minHeight: "100vh",
         maxWidth: "1680px",
-        px: 6,
+        px: {xs: 3,  md:6}
       }}
     >
       <Grow

@@ -21,8 +21,8 @@ export default function ActionAreaCard({ ContentArray, selected, progress }) {
   const theme = useTheme();
 
   return (
-    <Box sx={{ m: {xs: 1, sm: 3, md: 5} }}>
-      <Card sx={{ maxWidth: 400, backgroundColor: theme.palette.secondary.main, p: 3 }}>
+    <Box sx={{ m: {xs: 0, sm: 3, md: 5} }}>
+      <Card sx={{ maxWidth: 400, backgroundColor: theme.palette.secondary.main, p: {xs: 1, sm: 3} }}>
         <CardActionArea>
           <Box sx={{ width: '100%' }}>
             <LinearProgress variant="determinate" value={progress} sx={{backgroundColor: theme.palette.secondary.main}}/>
