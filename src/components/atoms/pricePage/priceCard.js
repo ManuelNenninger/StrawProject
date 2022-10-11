@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import ActionButton from "../buttons/actionButton";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import OrderDialog from "./OrderDialog";
+import OrderDialog from "./orderDialog";
 
 export default function PriceCard (props) {
   const [open, setOpen] = React.useState(false);
