@@ -10,7 +10,7 @@ import Layout from "../src/components/layout";
 //So importierst Du css Styles. --> import "../styles/consoleLogDesignCss.css"
 import createEmotionCache from '../src/createEmotionCache';
 import { AppWrapper } from "../src/appContext";
-import SeoHead from "../src/components/seoComponents/seoHead";
+//import SeoHead from "../src/components/seoComponents/seoHead";
 import specialTitle from "../src/components/seoComponents/specialTitles"
 
 
@@ -24,10 +24,10 @@ export default function MyApp(props) {
 
   return (
     <CacheProvider value={emotionCache}>
-      <SeoHead
+    {/*<SeoHead
         canonicalUrl={appProps.router.pathname}
         title={specialTitle[appProps.router.pathname]}
-      />
+      />*/}
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
