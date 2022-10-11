@@ -4,8 +4,18 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import ActionButton from "../../atoms/buttons/actionButton";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
+import SubscribeDialogPopUp from "../../atoms/dialogPopUp/subscribeDialogPopUp";
 
 export default function AboutSection() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <SectionWrapper secondaryBackgroundColor upperWave lowerWave>
       <Grid
@@ -76,12 +86,14 @@ export default function AboutSection() {
                 fullWidth
                 variant="outlined"
                 size="large"
-                text="More information"
+                text="Mehr Informationen"
+                onClick={handleClickOpen}
               />
             </Grid>
           </Grid>
         </Grid>
       </Grid>
+      <SubscribeDialogPopUp open={open} handleClose={handleClose} />
     </SectionWrapper>
   );
 }

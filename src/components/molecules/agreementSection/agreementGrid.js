@@ -27,10 +27,10 @@ export default function BoxSx() {
     BrokenImageRoundedIcon,
   }
 
-  const CellGrid = ({ IconName, Titel, Describtion }) => {
+  const CellGrid = ({ IconName, Titel, Describtion }, index) => {
     return (
       <>
-        <Grid xs={12} md={4} item>
+        <Grid xs={12} md={4} item key={"Grid_" + index}>
           <Grid
             container
             direction="column"
@@ -80,8 +80,8 @@ export default function BoxSx() {
             },
           }}
         >
-          {agreementGridContent.map(function (ContentObject) {
-            return CellGrid(ContentObject);
+          {agreementGridContent.map(function (ContentObject, index) {
+            return CellGrid(ContentObject, index);
           })}
         </Grid>
       </>

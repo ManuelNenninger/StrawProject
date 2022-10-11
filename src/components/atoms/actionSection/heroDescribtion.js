@@ -7,11 +7,22 @@ import ActionButton from "../buttons/actionButton"
 import { useTheme } from '@mui/material/styles';
 import { useAppContext } from "../../../appContext";
 import HighlighterText from "../wrapperElements/highlighterText";
+import SubscribeDialogPopUp from "../dialogPopUp/subscribeDialogPopUp";
 
 export default function HeroDescribtion(props) {
+  const [open, setOpen] = React.useState(false);
+
   const theme = useTheme();
   const value = useAppContext();
   let { heroContent } = value.content;
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -56,12 +67,13 @@ export default function HeroDescribtion(props) {
                   <ActionButton fullWidth variant="contained" size="large" text="Bestellen" secondaryColor href="/preis"/>
                 </Grid>
                 <Grid item md={6} xs={12}>
-                  <ActionButton fullWidth variant="outlined" size="large" text="Mehr Informationen" secondaryColor/>
+                  <ActionButton fullWidth variant="outlined" size="large" text="Mehr Informationen" secondaryColor onClick={handleClickOpen} />
                 </Grid>
               </Grid>
             </Box>
           </Grid>
         </Grid>
+        <SubscribeDialogPopUp open={open} handleClose={handleClose} />
       </Box>
     </>
   );
