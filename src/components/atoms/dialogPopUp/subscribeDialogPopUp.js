@@ -43,7 +43,7 @@ export default function DialogOrder({open, handleClose, order }){
         justifyContent="center"
         alignItems="center"
       >
-      <Grid item>
+      <Grid item sx={{width: "100%"}}>
         <EmailSubscribtion />
       </Grid>
       </Grid>

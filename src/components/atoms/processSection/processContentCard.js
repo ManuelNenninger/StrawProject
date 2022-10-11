@@ -37,7 +37,10 @@ export default function ActionAreaCard({ ContentArray, selected, progress }) {
             <Typography gutterBottom variant="h4" component="div" color="text.secondary">
               Schritt {selected}
             </Typography>
-            <Typography variant="h6" color="text.secondary">
+            <Typography variant="h6" color="text.secondary" sx={{display: {xs: "none", sm: "block"}}}>
+              {ContentArray[selected - 1].Describtion}
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" sx={{display: {xs: "block", sm: "none"}}} >
               {ContentArray[selected - 1].Describtion}
             </Typography>
           </CardContent>
