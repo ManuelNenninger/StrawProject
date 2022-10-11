@@ -31,7 +31,7 @@ export default function PriceCard (props) {
           backgroundColor: theme.palette.secondary.main,
           minWidth: 350,
           py: 4,
-          px: {xs: 3, md: 4},
+          px: {xs: 1, md: 4},
           border: 2,
           borderRadius: 5,
           borderColor: "secondary.main",

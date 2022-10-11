@@ -17,7 +17,6 @@ export default function BoxSx() {
       sx={{
         maxWidth: "1680px",
         minHeight: "100vh",
-        px: {xs: 3,  md:6}
       }}
     >
     <Grid
