@@ -50,7 +50,6 @@ export default function SeoHead({  title,
          <meta property="og:description" content={description ? description : siteMetadata.describtion } />
          <meta property="og:image" content={ogImageUrl ? ogImageUrl : siteMetadata.siteLogo} />
          <meta property="og:url" content={canonicalUrl} />
-         {children}
      </Head>
     </>
   )
