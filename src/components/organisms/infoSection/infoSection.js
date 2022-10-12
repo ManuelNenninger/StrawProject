@@ -12,13 +12,18 @@ import { useTheme } from "@mui/material/styles";
 import { useAppContext } from "../../../appContext";
 import ActionButton from "../../atoms/buttons/actionButton";
 import SubscribeDialogPopUp from "../../atoms/dialogPopUp/subscribeDialogPopUp";
-
+import {  useRef } from "react";
+import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
+import Grow from "@mui/material/Grow";
 
 export default function BoxSx() {
   const theme = useTheme();
   const value = useAppContext();
   let { infoContentArray, infoHeadline } = value.content.infoContent;
   const [open, setOpen] = React.useState(false);
+
+  const ref1 = useRef(null);
+  const isInViewport = useIsInViewport(ref1);
 
 
   const handleClickOpen = () => {
@@ -61,7 +66,13 @@ export default function BoxSx() {
 
   return (
     <SectionWrapper secondaryBackgroundColor upperWave bottomDistance>
+    <Grow
+       in={isInViewport}
+       style={{ transformOrigin: "0 0 0" }}
+       {...(isInViewport ? { timeout: 2000 } : {})}
+     >
       <Grid
+        ref={ref1}
         container
         direction="column"
         justifyContent="center"
@@ -99,6 +110,7 @@ export default function BoxSx() {
         />
         </Grid>
       </Grid>
+      </Grow>
       <SubscribeDialogPopUp open={open} handleClose={handleClose} />
     </SectionWrapper>
   );
