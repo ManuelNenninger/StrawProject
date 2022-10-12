@@ -17,7 +17,7 @@ export default function AboutSection() {
     setOpen(false);
   };
   return (
-    <SectionWrapper secondaryBackgroundColor upperWave lowerWave>
+    <SectionWrapper secondaryBackgroundColor lowerWave>
       <Grid
         id="About"
         container

@@ -1,10 +1,13 @@
 import Box from "@mui/material/Box";
 import SvgWrapper from "./svgWaveWrapper"
 import { useTheme } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
 
 export default function SectionWrapper(props){
   const theme = useTheme();
-  const {upperWave, lowerWave, footer, secondaryBackgroundColor } = props;
+  const {upperWave, lowerWave, footer, secondaryBackgroundColor, topDistance, bottomDistance } = props;
+  //Eine Wave schafft 300px distance. Hier kommen 150px padding, sowie 150px Margin des Deviders hinzu
+  const distancePadding = "150px";
 
   return(
     <Box>
@@ -21,9 +24,13 @@ export default function SectionWrapper(props){
           maxWidth: "1680px",
           backgroundColor: secondaryBackgroundColor ? theme.palette.secondary.main : theme.palette.primary.main,
           px: {xs: 3,  md:6},
+          pt: topDistance ? distancePadding : 0,
+          pb: bottomDistance ? distancePadding: 0,
         }}
       >
-      {props.children}
+      {topDistance ? (<Divider variant="middle" sx={{mb: "150px", backgroundColor: secondaryBackgroundColor ? theme.palette.primary.main : theme.palette.secondary.main}}/>) : <></>}
+        {props.children}
+      {bottomDistance ? (<Divider variant="middle" sx={{mt: "150px", backgroundColor: secondaryBackgroundColor ? theme.palette.primary.main : theme.palette.secondary.main}}/>) : <></>}
       </Box>
       {lowerWave ? <SvgWrapper>
         <path
