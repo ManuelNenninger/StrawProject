@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import HeroPicture from "../../../../public/heroPictureTwo.svg";
+import HeroPicture from "../../../../public/restaurant.svg";
 
 export default function heroPicture(props) {
   return (

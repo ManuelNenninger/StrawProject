@@ -100,6 +100,11 @@ const [anchorElNav, setAnchorElNav] = React.useState(null)
             <Typography textAlign="center">Bestellen</Typography>
         </MenuItem>
       </Link>
+      <Link href="/business">
+        <MenuItem onClick={handleCloseNavMenu} >
+            <Typography textAlign="center">B2B</Typography>
+        </MenuItem>
+      </Link>
       <MenuItem value="How_it_works" onClick={handleCloseNavMenu}>
         <Typography  textAlign="center">How it works</Typography>
       </MenuItem>
@@ -135,6 +140,7 @@ const [anchorElNav, setAnchorElNav] = React.useState(null)
               <ResponsiveMenu />
             </Box>
             <Box sx={{display: {xs: "none", md: "block"}}}>
+              <ActionButton variant="outlined" text="B2B" value="B2B" href="/business"/>
               <ActionButton variant="outlined" text="Über mich" value="About" onClick={handleClick}/>
               <ActionButton variant="outlined" text="How it works" value="How_it_works" onClick={handleClick} />
               <ActionButton variant="contained" text="Bestellen" href="/preis" />

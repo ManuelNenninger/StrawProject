@@ -62,11 +62,11 @@ let contentObject = {
     ]
   },
   infoContent: {
-    infoHeadline: "Wir haben großes vor - zusammen mit Dir.",
+    infoHeadline: "Wir haben großes vor - zusammen.",
     infoContentArray: [
       {
-        ActionTitel: "Klimaneutral",
-        Description: "Wir wollen ein Unternehmen aufbauen, das klimaneutral ist. Du sollst Dir keine Gedanken über die Umwelt machen müssen, wenn Du bei uns einkaufst. Noch sind wir am Anfang als Start-Up, aber das Ziel steht fest.",
+        ActionTitel: "Umweltbewusst",
+        Description: "Wir wollen ein Unternehmen aufbauen, das dabei hilft den Plastikverbrauch im Alltag zu reduzieren und verantwortungsvoller mit Ressourcen umgeht. Du sollst Dir keine Gedanken über die Umwelt machen müssen, wenn Du bei uns einkaufst. Noch sind wir am Anfang als Start-Up, aber das Ziel steht fest.",
         Image: "test.svg"
       },
       {
@@ -78,7 +78,15 @@ let contentObject = {
   },
   aboutContent: {
     mainText: "",
-  }
+  },
+  businessHeroContent: {
+    heroTitel: "Mach die Welt ein bischen besser, mit deinem Restaurant",
+    heroDescribtion: "Stelle auf 100% nachhaltige Trinkhalme aus Reisstärke um und reduziere Plastikmüll und Ressourcen",
+  },
+  businessInfoContent: {
+    Title: "Stell um auf Nachhaltig",
+    Describtion: "Du brauchst mehr als 500 Trinkhalme oder eine individuelle Menge? Kein Problem. Du kannst uns einfach über den Bestellbutton kontaktieren und wir machen Dir ein unverbindliches Angebot, das für dich am besten geeignet ist.",
+  },
 }
 
 export default contentObject;
