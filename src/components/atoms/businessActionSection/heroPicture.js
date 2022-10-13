@@ -6,8 +6,11 @@ export default function heroPicture(props) {
   return (
     <>
       <Box sx={{ p: 5 }}>
-        <Box>
-          <Image src={HeroPicture} width={130} height={100} layout="responsive" alt="bio strohhalm nachhaltig"/>
+        <Box sx={{display: {xs: "none", md: "block"}}} >
+          <Image src={HeroPicture} width={130} height={100}  layout="responsive" alt="bio strohhalm nachhaltig"/>
+        </Box>
+        <Box sx={{display: {xs: "block", md: "none"}}} >
+          <Image src={HeroPicture} width={200} height={250} layout="responsive" alt="bio strohhalm nachhaltig"/>
         </Box>
       </Box>
     </>

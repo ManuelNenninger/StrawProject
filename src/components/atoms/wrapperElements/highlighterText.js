@@ -1,9 +1,9 @@
 import Typography from "@mui/material/Typography";
 
-export default function HighlighterText({children }){
+export default function HighlighterText({children, variant }){
   return (
     <>
-      <Typography variant="h2" component="span" className="highlight" color="text.secondary" gutterBottom sx={{  }}>
+      <Typography variant={variant} component="span" className="highlight" color="text.secondary" gutterBottom sx={{  }}>
         {children}
       </Typography>
     </>

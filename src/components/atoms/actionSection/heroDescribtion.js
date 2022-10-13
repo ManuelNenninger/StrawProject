@@ -34,7 +34,7 @@ export default function HeroDescribtion(props) {
       sx={{fontWeight: "300"}}
       >
         {heroContent.heroTitel}
-        <HighlighterText>
+        <HighlighterText variant={props.variant}>
           nur besser
         </HighlighterText>
       </Typography>

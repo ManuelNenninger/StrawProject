@@ -33,7 +33,7 @@ export default function HeroDescribtion(props) {
       component="h1"
       sx={{fontWeight: "300"}}
       >
-        Mach <HighlighterText> die Welt </HighlighterText> ein bischen besser, mit deinem Restaurant
+        Mach <HighlighterText variant={props.variant}> die Welt </HighlighterText> ein bischen besser, mit deinem Restaurant
       </Typography>
     )
   }

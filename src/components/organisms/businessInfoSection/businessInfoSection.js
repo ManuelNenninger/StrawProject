@@ -82,6 +82,7 @@ export default function BoxSx() {
               gutterBottom
               variant="h3"
               component="div"
+              align="center"
             >
               Enterprise
             </Typography>
@@ -92,6 +93,7 @@ export default function BoxSx() {
               gutterBottom
               variant="h5"
               component="div"
+              align="center"
             >
               > 500 Stück
             </Typography>
@@ -111,6 +113,7 @@ export default function BoxSx() {
                   gutterBottom
                   variant="h4"
                   component="div"
+                  align="center"
                   sx={{ fontWeight: "300" }}
                 >
                   Kontaktiere uns
