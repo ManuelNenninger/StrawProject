@@ -1,10 +1,11 @@
 import HomePage from "../src/components/templates/homePage"
 
-export default function Home() {
+
+export default function Home({test}) {
 
   return (
     <>
-      <HomePage />
+      <HomePage test={test}/>
     </>
   )
 }

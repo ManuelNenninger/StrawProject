@@ -23,6 +23,15 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
         </Head>
         <body>
+        {/* Google Tag Manager - Global base code */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
           <Main />
           <NextScript />
         </body>

@@ -12,6 +12,7 @@ import createEmotionCache from '../src/createEmotionCache';
 import { AppWrapper } from "../src/appContext";
 import SeoHead from "../src/components/seoComponents/seoHead";
 import specialTitle from "../src/components/seoComponents/specialTitles"
+import Script from 'next/script'
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -28,6 +29,21 @@ export default function MyApp(props) {
         canonicalUrl={appProps.router.pathname}
         title={specialTitle[appProps.router.pathname]}
       />
+      {/* Google Tag Manager - Global base code */}
+      <Script
+        id="gtag-base"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `,
+        }}
+      />
+
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />

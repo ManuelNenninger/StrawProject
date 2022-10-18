@@ -7,9 +7,9 @@ import ProcessSection from "../organisms/processSection/processSectionMain";
 import AboutSection from "../organisms/aboutSection/aboutSectionMain";
 import InfoSection from "../organisms/infoSection/infoSection";
 
-export default function Home() {
+export default function Home({test}) {
   const theme = useTheme();
-
+  console.log(test);
   return (
     <>
       <ActionSection/>

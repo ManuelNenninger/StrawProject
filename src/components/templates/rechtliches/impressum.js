@@ -27,13 +27,13 @@ export default function BoxSx() {
             Angaben gemäß § 5 TMG
           </Typography>
           <Typography variant="subtitle1" gutterBottom component="pre">
-            {"Manuel Nenninger | BrandName \nHedwigstrasse 2\n 80636 München"}
+            {"Manuel Nenninger | Risao \nHedwigstrasse 2\n 80636 München"}
           </Typography>
           <Typography variant="h4" gutterBottom>
             Kontakt
           </Typography>
           <Typography variant="subtitle1" component="pre" gutterBottom>
-            {"Telefon: +49 151 16331310\nE-Mail: manuel.nenninger@gmail.com"}
+            {"Telefon: +49 151 16331310\nE-Mail: risao.info@gmail.com"}
           </Typography>
         </Grid>
       </Grid>

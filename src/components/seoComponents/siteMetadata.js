@@ -7,7 +7,7 @@ const siteMetadata = {
     siteUrl: "https://risao.de",
     siteLogo: "https://risao.de/images/logo.png",
     siteLogoSquare: "https://risao.de/images/logox200.png",
-    email: "yourName@example.com",
+    email: "risao.info@gmail.com",
     twitter: "https://twitter.com/risao",
     twitterHandle: "@risao",
     facebook: "https://www.facebook.com/risao",
