@@ -29,10 +29,12 @@ export default function DialogOrder({open, handleClose, order }){
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
           <Typography variant="body1" color="text.primary">
-            Hinterlasse uns deine E-Mail und wir Informieren dich ausführlicher über unser Produkt.
+            Wir wollen mit Risoa unseren Beitrag leisten die Umwelt zu schützen.
+            {/*Hinterlasse uns deine E-Mail und wir Informieren dich ausführlicher über unser Produkt.*/}
           </Typography>
           <Typography variant="body1" color="text.primary" >
-            Du verpasst somit auch keine Sonderangebote mehr und wirst als erster über Neuigkeiten erfahren!
+            Wenn Du dich also interessierst, welche spannenden Projekte wir als nächstes angehen, möchtest über Änderungen am Produkt mit abstimmen, oder dich einfach nur für Start Ups interessierst, lass uns gerne deine Mail da.
+            {/*Du verpasst somit auch keine Sonderangebote mehr und wirst als erster über Neuigkeiten erfahren!*/}
           </Typography>
         </DialogContentText>
       </DialogContent>

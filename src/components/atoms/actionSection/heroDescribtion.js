@@ -76,7 +76,7 @@ export default function HeroDescribtion(props) {
                   <ActionButton fullWidth variant="contained" size="large" text="Bestellen" secondaryColor href="/preis"/>
                 </Grid>
                 <Grid item md={6} xs={12}>
-                  <ActionButton fullWidth variant="outlined" size="large" text="Mehr Informationen" secondaryColor onClick={handleClickOpen} />
+                  <ActionButton fullWidth variant="outlined" size="large" text="Zum Newsletter" secondaryColor onClick={handleClickOpen} />
                 </Grid>
               </Grid>
             </Box>

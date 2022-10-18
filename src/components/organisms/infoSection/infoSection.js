@@ -105,7 +105,7 @@ export default function BoxSx() {
           fullWidth
           variant="outlined"
           size="large"
-          text="Mehr Informationen"
+          text="Zum Newsletter"
           onClick={handleClickOpen}
         />
         </Grid>
