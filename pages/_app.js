@@ -14,28 +14,22 @@ import SeoHead from "../src/components/seoComponents/seoHead";
 import specialTitle from "../src/components/seoComponents/specialTitles"
 import Script from 'next/script'
 import { useRouter } from 'next/router'
-
+import * as gtag from '../lib/gtag'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
-{/* Google Tag Manager - Page Route base code */}
- const pageview = (url) => {
-  window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
-    page_path: url,
-  })
-}
-
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const {...appProps} = props
-  console.log(appProps.router.pathname);
+  //console.log(appProps.router.pathname);
 
   {/* Google Tag Manager - Page Route base code */}
   const router = useRouter()
   React.useEffect(() => {
     const handleRouteChange = (url) => {
-      pageview(url)
+      gtag.pageview(url)
+      if(url === "/preis") {gtag.event()}
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     router.events.on('hashChangeComplete', handleRouteChange)
