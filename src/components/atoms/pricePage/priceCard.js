@@ -76,6 +76,7 @@ export default function PriceCard (props) {
           size="large"
           text="Order"
           onClick={handleClickOpen}
+          className="orderButton"
         />
         </Grid>
       </Grid>

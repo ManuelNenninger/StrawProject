@@ -8,6 +8,7 @@ let contentObject = {
     //"Ein Strohhalm, der die Welt ein bischen besser macht.",
     heroDescribtion:
     "Aus 100% Reisstärke, biologisch abbaubar und weichen nicht auf wie Papierhalme.",
+    //Hält länger als dein Drink
     //"Unsere Trinkhalme aus 100% Reisstärke sind biologisch abbaubar und weichen nicht auf wie Papier Halme  - genieß dein Getränk während Du die Umwelt schützt.",
     //"Du kannst die Umwelt schützen und einen Trinkhalm haben, der nicht nach kurzer Zeit anfängt aufzuweichen.",
     //"Nur weil Du helfen willst die Umwelt zu schützen musst Du nicht einen Strohhalm nehmen der bereits nach kurzer Zeit aufweicht",
