@@ -37,7 +37,7 @@ export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const {...appProps} = props
   //console.log(appProps.router.pathname);
-
+  console.log("test");
   {/* Google Tag Manager - Page Route base code */}
   const router = useRouter()
   React.useEffect(() => {
