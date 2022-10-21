@@ -38,7 +38,7 @@ export default function MyApp(props) {
   const {...appProps} = props
   //console.log(appProps.router.pathname);
 
-  {/* Google Tag Manager - Page Route base code */}
+  {/* Google Analytic & Tag Manager - Page Route base code */}
   const router = useRouter()
   React.useEffect(() => {
     const handleRouteChange = (url) => {
