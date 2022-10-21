@@ -37,7 +37,7 @@ export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const {...appProps} = props
   //console.log(appProps.router.pathname);
-  console.log("test");
+
   {/* Google Tag Manager - Page Route base code */}
   const router = useRouter()
   React.useEffect(() => {
@@ -74,7 +74,7 @@ export default function MyApp(props) {
                     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                    })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}');
+                    })(window,document,'script','dataLayer', 'GTM-K6Q7ZKL');
                   `,
                 }}
               />
