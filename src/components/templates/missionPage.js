@@ -43,9 +43,6 @@ export default function BoxSx() {
       >
         {missionContent.heroDescribtion}
       </Typography>
-      <HighlighterText variant={props.variant}>
-        Und wir helfen dir dabei.
-      </HighlighterText>
       </>
     )
   }

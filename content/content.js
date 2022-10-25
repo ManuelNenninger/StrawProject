@@ -89,7 +89,10 @@ let contentObject = {
     Describtion: "Du brauchst mehr als 500 Trinkhalme oder eine individuelle Menge? Kein Problem. Du kannst uns einfach über den Bestellbutton kontaktieren und wir machen Dir ein unverbindliches Angebot, das für dich am besten geeignet ist.",
   },
   missionContent: {
-    heroDescribtion: "Es sind die kleinen Dinge, die in Summe großes bewirken.\nWenn Du die Welt ein bisschen besser machen willst, musst Du nicht gleich dein ganzes Leben umkrempeln.\nEs reicht, wenn Du mit kleinen Dingen beginnst.\nSo kannst Du Stück für Stück weniger Energie verbrauchen.\nEin wenig mehr auf deine Umwelt achten und hier und da ein wenig Plastik einsparen.",
+    //Die überlegung ist, wie kannst Du mit kleinen DIngen einen großen Input bewirken - wie mit einem Trinkhalm.
+    //heroDescribtion: "Es sind die kleinen Dinge, die in Summe großes bewirken.\nWenn Du die Welt ein bisschen besser machen willst, musst Du nicht gleich dein ganzes Leben umkrempeln.\nEs reicht, wenn Du mit kleinen Dingen beginnst.\nSo kannst Du Stück für Stück weniger Energie verbrauchen.\nEin wenig mehr auf deine Umwelt achten und hier und da ein wenig Plastik einsparen.",
+    //heroDescribtion: "Es sind die kleinen Dinge, die in Summe großes bewirken.\nWenn Du die Welt ein verbessern willst, musst Du nicht gleich dein ganzes Leben umkrempeln.\nEs reicht, wenn Du mit kleinen Dingen beginnst.\nWir helfen Dir dabei einen nachhaltigeren Lifestyle zu leben. Mit unseren Trinkhalmen verzichtest Du  ganz einfach auf Einwegplastik und reduzierst CO₂-Emissionen.",
+    heroDescribtion: "Wir glauben, es sind die kleinen Dinge, die in Summe großes bewirken.\nWir möchten Dir dabei helfen einen nachhaltigeren Lifestyle zu leben und damit unseren Planeten zu erhalten.\nSo kannst Du mit unseren Trinkhalmen ganz einfach auf Einweg-Plastik verzichten und reduzierst CO₂-Emissionen.\nMit einem kleinen Trinkhalm kannst Du einen großen Beitrag zur Erhaltung unserer Erde leisten.",
   },
 }
 
