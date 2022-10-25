@@ -88,6 +88,9 @@ let contentObject = {
     Title: "Stell um auf Nachhaltig",
     Describtion: "Du brauchst mehr als 500 Trinkhalme oder eine individuelle Menge? Kein Problem. Du kannst uns einfach über den Bestellbutton kontaktieren und wir machen Dir ein unverbindliches Angebot, das für dich am besten geeignet ist.",
   },
+  missionContent: {
+    heroDescribtion: "Es sind die kleinen Dinge, die in Summe großes bewirken.\nWenn Du die Welt ein bisschen besser machen willst, musst Du nicht gleich dein ganzes Leben umkrempeln.\nEs reicht, wenn Du mit kleinen Dingen beginnst.\nSo kannst Du Stück für Stück weniger Energie verbrauchen.\nEin wenig mehr auf deine Umwelt achten und hier und da ein wenig Plastik einsparen.",
+  },
 }
 
 export default contentObject;

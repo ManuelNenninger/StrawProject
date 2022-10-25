@@ -22,7 +22,7 @@ const FooterContent = [
     titel: "Rechtliches",
     listContent: [
       { describtion: "Impressum", link: "/impressum" },
-      { describtion: "Datenschutzerklährung", link: "/datenschutz" }
+      { describtion: "Datenschutzerklärung", link: "/datenschutz" }
     ]
   }
 ];

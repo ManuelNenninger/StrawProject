@@ -11,7 +11,7 @@ import Layout from "../src/components/layout";
 import createEmotionCache from '../src/createEmotionCache';
 import { AppWrapper } from "../src/appContext";
 import SeoHead from "../src/components/seoComponents/seoHead";
-import specialTitle from "../src/components/seoComponents/specialTitles"
+import {specialTitle, titelCreater} from "../src/components/seoComponents/seoTitles"
 import Script from 'next/script'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
@@ -22,7 +22,6 @@ const clientSideEmotionCache = createEmotionCache();
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const {...appProps} = props
-  //console.log(appProps.router.pathname);
 
   {/* Google Analytic & Tag Manager - Page Route base code */}
   const router = useRouter()
@@ -43,7 +42,7 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
     <SeoHead
         canonicalUrl={appProps.router.pathname}
-        title={specialTitle[appProps.router.pathname]}
+        title={specialTitle[appProps.router.pathname] ? specialTitle[appProps.router.pathname] : titelCreater(router.pathname)}
       />
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
