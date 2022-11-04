@@ -29,7 +29,7 @@ export default function AgreementSectionMain() {
       sx={{ minHeight: "100%", }}
       //spacing={1}
     >
-      <Grid item sx={{position: "relative",}}>
+      <Grid item sx={{position: "relative",pb: 5}}>
         <Box sx={{  position: "absolute", }}>
           <Box sx={{  position: "relative", transform: "translate(-50%,-50%)", minWidth: {xs: "75vw", md:"50vw"}, }}>
             <CounterAgreement />

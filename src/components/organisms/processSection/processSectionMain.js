@@ -170,8 +170,8 @@ export default function BoxSx() {
         alignItems="center"
         sx={{}}
       >
-        <Grid item>
-          <Typography variant="h2" align="center" gutterBottom sx={{display: {xs: "none", sm: "block"}}}>
+        <Grid item sx={{pb: 10}} >
+          <Typography variant="h3" align="center" gutterBottom sx={{display: {xs: "none", sm: "block"}}}>
             Teste unser Produkt
           </Typography>
           <Typography variant="h3" align="center" gutterBottom sx={{display: {xs: "block", sm: "none"}}}>
@@ -188,7 +188,7 @@ export default function BoxSx() {
             Test
           </Button>*/}
         </Grid>
-        <Grid item sx={{pt: 15, width: "100%", }}>
+        <Grid item sx={{ width: "100%", }}>
           <Grid
             container
             direction="row"

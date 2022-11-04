@@ -102,12 +102,12 @@ export default function BoxSx() {
         alignItems="center"
         sx={{}}
       >
-        <Grid item sx={{width: "100%"}}>
+        <Grid item sx={{width: "100%", pb: 10}}>
           <Typography align="center" variant="h2" gutterBottom color="text.secondary">
             Vorteile von Risao
           </Typography>
         </Grid>
-        <Grid item sx={{pt: 15}}>
+        <Grid item sx={{ }}>
           <MainGrid />
         </Grid>
       </Grid>

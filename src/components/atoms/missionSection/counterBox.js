@@ -63,7 +63,8 @@ export default function CounterBox({trigger, settrigger, ...props}){
     <>
       <Box
         sx={{
-          backgroundColor: theme.palette.secondary.main,
+          //backgroundColor: theme.palette.secondary.main,
+          background: "url(//s2.svgbox.net/pen-brushes.svg?color=1d3a24&ic=brush-10)",
           mt: 5,
           p: {xs: 1, sm: 5},
           py: {xs: 3, sm:5},

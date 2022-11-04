@@ -17,14 +17,14 @@ export default function AboutSection() {
     setOpen(false);
   };
   return (
-    <SectionWrapper secondaryBackgroundColor lowerWave>
+    <SectionWrapper secondaryBackgroundColor lowerWave upperWave>
       <Grid
         id="About"
         container
         direction="column"
         justifyContent="flex-start"
         alignItems="center"
-        sx={{ px: {xs: 0, md: 20, lg: 30, xl: 40}, }}
+        sx={{ pb: 10, px: {xs: 0, md: 20, lg: 30, xl: 40}, }}
       >
         <Grid item>
           <Typography
@@ -36,7 +36,7 @@ export default function AboutSection() {
             About
           </Typography>
         </Grid>
-        <Grid item sx={{  pt: 15 }} >
+        <Grid item sx={{  }} >
           <Typography variant="h5" gutterBottom color="text.secondary" sx={{pb: 2}}>
             Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papierhalme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
 

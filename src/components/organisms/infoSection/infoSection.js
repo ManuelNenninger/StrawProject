@@ -65,7 +65,7 @@ export default function BoxSx() {
   };
 
   return (
-    <SectionWrapper secondaryBackgroundColor upperWave bottomDistance>
+    <SectionWrapper secondaryBackgroundColor upperWave lowerWave>
     <Grow
        in={isInViewport}
        style={{ transformOrigin: "0 0 0" }}
@@ -78,7 +78,7 @@ export default function BoxSx() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item sx={{ pb: 15, pt: 5 }}>
+        <Grid item sx={{ pb: 10, pt: 5 }}>
           {" "}
           <Typography variant="h3" gutterBottom color="text.secondary" sx={{fontWeight: "300", display: {xs: "none", sm: "block"}}} align="center">
             {infoHeadline}
