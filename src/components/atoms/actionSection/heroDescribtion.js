@@ -8,13 +8,17 @@ import { useTheme } from '@mui/material/styles';
 import { useAppContext } from "../../../appContext";
 import HighlighterText from "../wrapperElements/highlighterText";
 import SubscribeDialogPopUp from "../dialogPopUp/subscribeDialogPopUp";
+import {PortableText} from '@portabletext/react'
+import {ptComponents} from "../../../../lib/sanity";
 
-export default function HeroDescribtion(props) {
+export default function HeroDescribtion({content}) {
   const [open, setOpen] = React.useState(false);
 
   const theme = useTheme();
-  const value = useAppContext();
-  let { heroContent } = value.content;
+  // const value = useAppContext();
+  // let { heroContent } = value.content;
+  //Content from Sanity
+  let {heroDescribtion="", heroTitle=[], primaryCallToAction="" } = content;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,8 +28,8 @@ export default function HeroDescribtion(props) {
     setOpen(false);
   };
 
+  //Die Responsive Heading wird von Sanity als Block Content unter Custome Heading gerendered.
   const ResponsiveTypography = (props) => {
-
     return(
       <Typography
       variant={props.variant}
@@ -33,7 +37,7 @@ export default function HeroDescribtion(props) {
       component="h1"
       sx={{fontWeight: "300"}}
       >
-        {heroContent.heroTitel}
+          Hier sollte der HeroTitle stehen.
         <HighlighterText variant={props.variant}>
           nur besser
         </HighlighterText>
@@ -51,16 +55,14 @@ export default function HeroDescribtion(props) {
           sx={{ pr: { xs: "none", md: 15 }, mt: {xs: 10, md: 0} }}
         >
           <Grid item >
-            <Box sx={{display: {xs: "none", sm: "block"}}} >
-              <ResponsiveTypography variant="h2" />
-            </Box>
-            <Box sx={{display: {xs: "block", sm: "none"}}} >
-              <ResponsiveTypography variant="h3" />
-            </Box>
+            <PortableText
+              value={heroTitle}
+              components={ptComponents}
+            />
           </Grid>
           <Grid item >
             <Typography variant="h5" component="h2" gutterBottom sx={{  }}>
-              {heroContent.heroDescribtion}
+              {heroDescribtion}
             </Typography>
           </Grid>
           <Grid item sx={{ width: "100%", pt: 2 }}>

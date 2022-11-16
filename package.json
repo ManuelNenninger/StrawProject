@@ -16,6 +16,10 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.5",
+    "@portabletext/react": "^2.0.0",
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "groq": "^2.33.2",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"

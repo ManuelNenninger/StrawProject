@@ -7,17 +7,19 @@ import BloBWrapper from "../../atoms/wrapperElements/blobWrapper";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
 import ActionButton from "../../atoms/buttons/actionButton";
 import OrderDialog from "../../atoms/pricePage/orderDialog";
-import { useAppContext } from "../../../appContext";
+// import { useAppContext } from "../../../appContext";
 import {  useRef } from "react";
 import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
 import Grow from "@mui/material/Grow";
 
-export default function BoxSx() {
+export default function BoxSx(props) {
   const [open, setOpen] = React.useState(false);
-  const value = useAppContext();
-  let { businessInfoContent } = value.content;
+  // const value = useAppContext();
+  // let { businessInfoContent } = value.content;
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
+  let {sectionTitle="", sectionDescribtion="", priceinfobuilder=[] } = props.content;
+  let {pricecarddescribtion="", pricecardprice="", pricecardtitle="" } = priceinfobuilder[0];
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -39,15 +41,15 @@ export default function BoxSx() {
           <Grid item>
             {" "}
             <Typography variant="h3" gutterBottom color="text.secondary" sx={{fontWeight: "300", display: {xs: "none", md: "block"}}} >
-              {businessInfoContent.Title}
+              {sectionTitle}
             </Typography>
             <Typography variant="h4" gutterBottom color="text.secondary" sx={{fontWeight: "300", display: {xs: "block", md: "none"}}} align="center">
-              {businessInfoContent.Title}
+              {sectionTitle}
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" gutterBottom color="text.secondary">
-            {businessInfoContent.Describtion}
+            {sectionDescribtion}
             </Typography>
           </Grid>
         </Grid>
@@ -84,7 +86,7 @@ export default function BoxSx() {
               component="div"
               align="center"
             >
-              Enterprise
+              {pricecardtitle}
             </Typography>
           </Grid>
           <Grid item>
@@ -95,7 +97,7 @@ export default function BoxSx() {
               component="div"
               align="center"
             >
-              > 500 Stück
+              {pricecarddescribtion}
             </Typography>
           </Grid>
 
@@ -116,7 +118,7 @@ export default function BoxSx() {
                   align="center"
                   sx={{ fontWeight: "300" }}
                 >
-                  Kontaktiere uns
+                  {pricecardprice}
                 </Typography>
               </Grid>
               <Grid item></Grid>

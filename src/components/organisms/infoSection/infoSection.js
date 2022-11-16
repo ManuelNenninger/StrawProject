@@ -9,18 +9,21 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
 import { useTheme } from "@mui/material/styles";
-import { useAppContext } from "../../../appContext";
+// import { useAppContext } from "../../../appContext";
 import ActionButton from "../../atoms/buttons/actionButton";
 import SubscribeDialogPopUp from "../../atoms/dialogPopUp/subscribeDialogPopUp";
 import {  useRef } from "react";
 import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
 import Grow from "@mui/material/Grow";
+import {PortableText} from '@portabletext/react'
+import {ptComponents, urlFor} from "../../../../lib/sanity";
 
-export default function BoxSx() {
+export default function BoxSx({content}) {
   const theme = useTheme();
-  const value = useAppContext();
-  let { infoContentArray, infoHeadline } = value.content.infoContent;
+  // const value = useAppContext();
+  // let { infoContentArray, infoHeadline } = value.content.infoContent;
   const [open, setOpen] = React.useState(false);
+  let {sectionTitle="", cardbuilder=[]} = content
 
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
@@ -34,15 +37,15 @@ export default function BoxSx() {
     setOpen(false);
   };
 
-  const GridCard = (object, index) => {
+  const GridCard = ({cardtitle, mainImage, body}, index) => {
     return (
       <>
-        <Grid item xs={12} md={6} sx={{}}>
+        <Grid item xs={12} md={6} sx={{}} key={"CardInfo_" + index}>
           <Card sx={{ maxWidth: 400, mx: "auto", backgroundColor: theme.palette.primary.main}}>
             <CardMedia
               component="img"
               height="400"
-              image={object.Image}
+              image={urlFor(mainImage).url()}
               alt="green iguana"
             />
             <CardContent sx={{}}>
@@ -51,10 +54,13 @@ export default function BoxSx() {
                 variant="h5"
                 component="div"
               >
-                {object.ActionTitel}
+                {cardtitle}
               </Typography>
               <Typography variant="body2" >
-                {object.Description}
+                <PortableText
+                  value={body}
+                  components={ptComponents}
+                />
               </Typography>
             </CardContent>
             <CardActions></CardActions>
@@ -81,10 +87,10 @@ export default function BoxSx() {
         <Grid item sx={{ pb: 10, pt: 5 }}>
           {" "}
           <Typography variant="h3" gutterBottom color="text.secondary" sx={{fontWeight: "300", display: {xs: "none", sm: "block"}}} align="center">
-            {infoHeadline}
+            {sectionTitle}
           </Typography>
           <Typography variant="h4" gutterBottom color="text.secondary" sx={{fontWeight: "300", display: {xs: "block", sm: "none"}}} align="center">
-            {infoHeadline}
+            {sectionTitle}
           </Typography>
         </Grid>
         <Grid item>
@@ -95,7 +101,7 @@ export default function BoxSx() {
             alignItems="flex-start"
             spacing={20}
           >
-            {infoContentArray.map(function (object, index) {
+            {cardbuilder.map(function (object, index) {
               return GridCard(object, index);
             })}
           </Grid>

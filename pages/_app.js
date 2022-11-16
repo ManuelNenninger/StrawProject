@@ -40,7 +40,7 @@ export default function MyApp(props) {
 
   return (
     <CacheProvider value={emotionCache}>
-    <SeoHead
+      <SeoHead
         canonicalUrl={appProps.router.pathname}
         title={specialTitle[appProps.router.pathname] ? specialTitle[appProps.router.pathname] : titelCreater(router.pathname)}
       />

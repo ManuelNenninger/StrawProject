@@ -5,13 +5,16 @@ import Typography from "@mui/material/Typography";
 import ActionButton from "../../atoms/buttons/actionButton";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
 import SubscribeDialogPopUp from "../../atoms/dialogPopUp/subscribeDialogPopUp";
+import {PortableText} from '@portabletext/react'
+import {ptComponents} from "../../../../lib/sanity";
 
-export default function AboutSection() {
+export default function AboutSection({content}) {
   const [open, setOpen] = React.useState(false);
-
+  let {aboutTitle, body} = content;
   const handleClickOpen = () => {
     setOpen(true);
   };
+  console.log(body);
 
   const handleClose = () => {
     setOpen(false);
@@ -33,28 +36,16 @@ export default function AboutSection() {
             gutterBottom
             color="text.secondary"
           >
-            About
+            {aboutTitle}
           </Typography>
         </Grid>
         <Grid item sx={{  }} >
-          <Typography variant="h5" gutterBottom color="text.secondary" sx={{pb: 2}}>
-            Du möchtest helfen die Umwelt zu schützen, indem Du auf Plastik verzichtest - ohne auf durchgeweiche Papierhalme oder leicht zerbrechliche Alternativen aus Glas umzusteigen?
-
-            </Typography>
-            <Typography variant="h5" gutterBottom  color="text.secondary" sx={{pb: 2}}>
-              Die Trinkhalme von Risao sind aus 100% kompostierbarer Reisstärke produziert. Sie weichen nicht wie Papierhalme auf, sind biologisch abbaubar und ungefährlich für Kinder.
-
-            </Typography>
-            <Typography
-              variant="h5"
-              gutterBottom
-              sx={{pb: 2}}
-              //sx={{fontSize: {xs: "1.5rem", sm: "2.125rem"}}}
-              color="text.secondary"
-            >
-              Ich beginne gerade meine Reise mit Risao als Start-Up, um meine Idee zu testen und Feedback zu sammeln.
-              Falls ich Dir also helfen konnte, Dein Getränk nach einem stressigem Tag besser genießen zu können, lass es mich wissen!
-            </Typography>
+          <Typography variant="h5" gutterBottom color="text.secondary">
+            <PortableText
+              value={body}
+              components={ptComponents}
+            />
+          </Typography>
         </Grid>
         <Grid item sx={{  width: "100%", pt: 5 }}>
           <Grid

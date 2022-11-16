@@ -9,28 +9,40 @@ import SanitizerRoundedIcon from '@mui/icons-material/SanitizerRounded';
 import BrokenImageRoundedIcon from '@mui/icons-material/BrokenImageRounded';
 import Grow from "@mui/material/Grow";
 import SvgIcon from "@mui/material/SvgIcon";
-import { useAppContext } from "../../../appContext";
+// import { useAppContext } from "../../../appContext";
+import {PortableText} from '@portabletext/react'
+import {ptComponents} from "../../../../lib/sanity";
 
-export default function BoxSx() {
+export default function BoxSx({content}) {
   const theme = useTheme();
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
   //console.log("isInViewport1: ", isInViewport);
-  const value = useAppContext();
-  let { agreementGridContent } = value.content.agreementContent;
+  // const value = useAppContext();
+  // let { agreementGridContent } = value.content.agreementContent;
+  let {sectionTitle="", size="", columns=[]} = content;
 
-  //Da in dem Conent Object keine Variablen declariert sind, wird hier dem String eine Componente zugewiesen.
-  //https://stackoverflow.com/questions/47717326/how-to-render-a-component-by-string-name
+
   const icons = {
     LocalDrinkRoundedIcon,
     SanitizerRoundedIcon,
     BrokenImageRoundedIcon,
   }
 
-  const CellGrid = ({ IconName, Titel, Describtion }, index) => {
+  let gridBreakpoints = {};
+
+  const CellGrid = ({ iconname, title, body }, index) => {
+
     return (
       <>
-        <Grid xs={12} md={4} item key={"Grid_" + index}>
+        <Grid
+            xs={gridBreakpoints["xs"] ? gridBreakpoints["xs"] : "none"}
+            sm={gridBreakpoints["sm"] ? gridBreakpoints["sm"] : "none"}
+            md={gridBreakpoints["md"] ? gridBreakpoints["md"] : "none"}
+            lg={gridBreakpoints["lg"] ? gridBreakpoints["lg"] : "none"}
+            xl={gridBreakpoints["xl"] ? gridBreakpoints["xl"] : "none"}
+            item
+            key={"Grid_" + index}>
           <Grid
             container
             direction="column"
@@ -46,16 +58,19 @@ export default function BoxSx() {
             }}
           >
             <Grid item>
-              <SvgIcon component={icons[IconName]}  sx={{fontSize: 60, mb: 2}} color="primary" />,
+              <SvgIcon component={icons[iconname]}  sx={{fontSize: 60, mb: 2}} color="primary" />,
             </Grid>
             <Grid item>
               <Typography variant="h6" gutterBottom color="text.secondary">
-                {Titel}
+                {title}
               </Typography>
             </Grid>
             <Grid item>
               <Typography variant="subtitle1" gutterBottom color="text.secondary">
-                {Describtion}
+              <PortableText
+                value={body}
+                components={ptComponents}
+              />
               </Typography>
             </Grid>
           </Grid>
@@ -80,9 +95,19 @@ export default function BoxSx() {
             },
           }}
         >
-          {agreementGridContent.map(function (ContentObject, index) {
-            return CellGrid(ContentObject, index);
-          })}
+          {columns.map(function({blocks, sizes}){
+            {/*Hier werden die Grid Breakpoints festgelegt.*/}
+            (sizes.map(function(gridOptions){
+              {/*Hier werden die Grid Breakpoints in das Object übergeben.*/}
+              gridBreakpoints[gridOptions.breakpoint] = parseInt(12/gridOptions.width)
+            }))
+            return(
+              blocks.map(function(ContentObject, sizes, index){
+                return(CellGrid(ContentObject, sizes, index))
+              })
+            )
+          })
+          }
         </Grid>
       </>
     );
@@ -104,7 +129,7 @@ export default function BoxSx() {
       >
         <Grid item sx={{width: "100%", pb: 10}}>
           <Typography align="center" variant="h2" gutterBottom color="text.secondary">
-            Vorteile von Risao
+            {sectionTitle}
           </Typography>
         </Grid>
         <Grid item sx={{ }}>

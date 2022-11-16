@@ -9,87 +9,53 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Image from "next/image";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
 import { useTheme } from '@mui/material/styles';
-
+import {PortableText} from '@portabletext/react'
+import {ptComponents, urlFor} from "../../../../lib/sanity";
 
 export default function MoreInfoSection(props) {
   const theme = useTheme();
+  let {faqbuilder, alignment, faqsectiontitle, mainImage} = props.content;
 
-  const AccordionComponent = () => {
-    return (
-      <>
-        <Accordion sx={{ backgroundColor: theme.palette.primary.main, boxShadow: "none" }}>
+const AccordionComponent = () => {
+  return (
+    <>
+    {faqbuilder.map(function(faqrow, index){
+      let {body, title} = faqrow;
+      return (
+        <Accordion  key={index} sx={{ backgroundColor: theme.palette.primary.main, boxShadow: "none" }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             sx={{ py: 3 }}
           >
-            <Typography>Lagerung</Typography>
+            <Typography>{title}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              An einem kühlen, trockenen, licht- und feuchtigkeitsgeschützten Ort aufbewahrt, zwei Jahre haltbar.
+            <PortableText
+              value={body}
+              components={ptComponents}
+            />
             </Typography>
           </AccordionDetails>
         </Accordion >
-        <Accordion sx={{ backgroundColor: theme.palette.primary.main, boxShadow: "none" }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-            sx={{ py: 3 }}
-          >
-            <Typography>Verwendung</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Kann bis zu 40 Minuten lang für warme oder kalte Getränke verwendet werden.
-            </Typography>
-          </AccordionDetails>
-        </Accordion >
-        <Accordion sx={{ backgroundColor: theme.palette.primary.main, boxShadow: "none" }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-            sx={{ py: 3 }}
-          >
-            <Typography>Entsorgung</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Da der Trinkhalm aus natürlichen Polymeren besteht und keine Kunststoffe enthält, kann er ganz einfach in jedem Bio-Müll entsorgt werden.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion sx={{ backgroundColor: theme.palette.primary.main, boxShadow: "none" }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-            sx={{ py: 3 }}
-          >
-            <Typography>Abmaße</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Derzeit haben wir nur Trinkhalme mit einem Durchmesser von 6,5 mm und einer Länge von 210 mm zur Verfügung. Falls Ihr euch weitere Größen und Farben wünscht, lasst es uns wissen!
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      </>
-    );
-  };
+      )
+    })}
+
+    </>
+  )
+}
 
   const ImageComponent = () => {
     return (
       <>
         <Box className="unset-img" sx={{  }}>
           <Image
-            alt="Picture of the author"
+            alt="FAQ Häufige Fragen"
             width={5000}
             height={5000}
-            src="/Frame_6.svg"
+            src={urlFor(mainImage).url()}
             className="custom-img"
           />
         </Box>

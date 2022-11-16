@@ -8,6 +8,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { useTheme } from "@mui/material/styles";
 import  ActionButton from "../buttons/actionButton";
 import CardActions from '@mui/material/CardActions';
+import { urlFor} from "../../../../lib/sanity"
 
 const illustrationArray = {
         1: "Delivery-pana-2.svg",
@@ -17,8 +18,9 @@ const illustrationArray = {
       }
 
 export default function ActionAreaCard({ ContentArray, selected, progress }) {
-
   const theme = useTheme();
+  let {mainTitle="", mainImage, describtion } = ContentArray[selected-1];
+
 
   return (
     <Box sx={{ m: {xs: 0, sm: 3, md: 5} }}>
@@ -30,18 +32,18 @@ export default function ActionAreaCard({ ContentArray, selected, progress }) {
           <CardMedia
             component="img"
             height="345"
-            image={illustrationArray[selected]}
-            alt="Wie funktioniert es?"
+            image={(urlFor(mainImage).url())}
+            alt={mainTitle}
           />
           <CardContent>
             <Typography gutterBottom variant="h4" component="div" color="text.secondary">
               Schritt {selected}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{display: {xs: "none", sm: "block"}}}>
-              {ContentArray[selected - 1].Describtion}
+              {describtion}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary" sx={{display: {xs: "block", sm: "none"}}} >
-              {ContentArray[selected - 1].Describtion}
+              {describtion}
             </Typography>
           </CardContent>
           <CardActions>

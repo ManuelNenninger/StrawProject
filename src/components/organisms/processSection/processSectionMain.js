@@ -11,7 +11,7 @@ import {  useRef } from "react";
 import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
 import Grow from "@mui/material/Grow";
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
-import { useAppContext } from "../../../appContext";
+// import { useAppContext } from "../../../appContext";
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
@@ -32,10 +32,10 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   }
 }));
 
-export default function BoxSx() {
+export default function BoxSx({content}) {
   const theme = useTheme();
-  const value = useAppContext();
-  let { processCardArray } = value.content.processContent;
+  // const value = useAppContext();
+  // let { processCardArray } = value.content.processContent;
 
   const [selected, setSelected] = useState(1);
   const [trigger, settrigger] = useState(false);
@@ -43,8 +43,7 @@ export default function BoxSx() {
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
   //console.log("isInViewport1: ", isInViewport);
-
-
+let {processbuilder=[], sectionTitle=""} = content
 //<----- Begin Timer for Step switch ----->
   useEffect(() => {
     let zahl = 0;
@@ -93,7 +92,8 @@ export default function BoxSx() {
 
 
 
-  const InstructionBox = ({ Number, Titel }) => {
+  const InstructionBox = ({mainTitle}, index) => {
+    let Number = index + 1;
     return (
       <>
         <Box sx={{ mb: 6, borderBottom: "1px solid" }}>
@@ -126,7 +126,7 @@ export default function BoxSx() {
               <Grid item>
                 <Grid item>
                   <Typography variant="h3" display="block" color={selected === Number ? "text.secondary" : "text.main"} sx={{fontSize: {xs: "2.125rem", md: "3rem"}}}>
-                    {Titel}
+                    {mainTitle}
                   </Typography>
                 </Grid>
               </Grid>
@@ -146,8 +146,8 @@ export default function BoxSx() {
           justifyContent="center"
           alignItems="flex-start"
         >
-          {processCardArray.map(function (ContentObject) {
-            return InstructionBox(ContentObject);
+          {processbuilder.map(function (ContentObject, index) {
+            return InstructionBox(ContentObject, index);
           })}
         </Grid>
       </>
@@ -172,10 +172,10 @@ export default function BoxSx() {
       >
         <Grid item sx={{pb: 10}} >
           <Typography variant="h3" align="center" gutterBottom sx={{display: {xs: "none", sm: "block"}}}>
-            Teste unser Produkt
+            {sectionTitle}
           </Typography>
           <Typography variant="h3" align="center" gutterBottom sx={{display: {xs: "block", sm: "none"}}}>
-            Teste unser Produkt
+            {sectionTitle}
           </Typography>
           {/*<Button
             variant="text"
@@ -200,7 +200,7 @@ export default function BoxSx() {
               <ProcessInstruction />
             </Grid>
             <Grid item>
-              <ProcessContentCard ContentArray={processCardArray} selected={selected} progress={progress}/>
+              <ProcessContentCard ContentArray={processbuilder} selected={selected} progress={progress}/>
             </Grid>
           </Grid>
         </Grid>

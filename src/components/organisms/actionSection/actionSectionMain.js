@@ -7,10 +7,11 @@ import {  useRef } from "react";
 import useIsInViewport from "../../atoms/visibilityFunction/visibilityFunction"
 import Grow from "@mui/material/Grow";
 
-export default function HeroSection() {
+export default function HeroSection(props) {
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
   //console.log("isInViewport1: ", isInViewport);
+
 
   return (
     <Box
@@ -35,10 +36,10 @@ export default function HeroSection() {
           spacing={1}
         >
           <Grid item xs={12} md={6} >
-            <HeroDescribtion />
+            <HeroDescribtion {...props}/>
           </Grid>
           <Grid item xs={12} md={6} sx={{mb: {xs: 15, md: 0}}}>
-            <HeroPicture />
+            <HeroPicture {...props}/>
           </Grid>
         </Grid>
       </Grow>

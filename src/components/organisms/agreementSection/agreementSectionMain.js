@@ -7,7 +7,7 @@ import Divider from '@mui/material/Divider';
 import { useTheme } from '@mui/material/styles';
 import SectionWrapper from "../../atoms/wrapperElements/sectionWrapper"
 
-export default function AgreementSectionMain() {
+export default function AgreementSectionMain(props) {
   const theme = useTheme();
 
   return (
@@ -42,7 +42,7 @@ export default function AgreementSectionMain() {
         {/*<Divider/>*/}
       </Grid>
       <Grid item  >
-          <AgreementGrid/>
+          <AgreementGrid {...props}/>
       </Grid>
     </Grid>
     </SectionWrapper>
