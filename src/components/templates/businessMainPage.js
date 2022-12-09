@@ -4,7 +4,11 @@ import MoreInforSection from "../organisms/moreInfoSection/moreInfoSection";
 import ActionSection from "../organisms/actionSection/actionSectionMain";
 
 export default function Main (props){
-  let [ {faqsection}, {specialpricesection}, {herosection}] = props?.pages?.pageBuilder;
+  let [ {faqsection={}}, ] = props?.pages?.pageBuilder;
+  let test = props?.pages?.pageBuilder;
+  let [{herosection}] = test;
+  let [{specialpricesection}] = test;
+
 
   return(
     <>

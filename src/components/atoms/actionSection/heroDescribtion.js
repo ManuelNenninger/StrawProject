@@ -11,14 +11,15 @@ import SubscribeDialogPopUp from "../dialogPopUp/subscribeDialogPopUp";
 import {PortableText} from '@portabletext/react'
 import {ptComponents} from "../../../../lib/sanity";
 
-export default function HeroDescribtion({content}) {
+export default function HeroDescribtion({content={}}) {
+  console.log("Content in der komponente ist: ");
+  console.log(content);
   const [open, setOpen] = React.useState(false);
-
   const theme = useTheme();
   // const value = useAppContext();
   // let { heroContent } = value.content;
   //Content from Sanity
-  let {heroDescribtion="", heroTitle=[], primaryCallToAction="" } = content;
+  let {heroDescribtion="Lorem Ipsum Describtion.", heroTitle="Lorem Ipsum", primaryCallToAction="" } = content;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -55,10 +56,12 @@ export default function HeroDescribtion({content}) {
           sx={{ pr: { xs: "none", md: 15 }, mt: {xs: 10, md: 0} }}
         >
           <Grid item >
-            <PortableText
-              value={heroTitle}
-              components={ptComponents}
-            />
+          {typeof heroTitle !== 'string' ?
+            (<PortableText
+            value={heroTitle}
+            components={ptComponents}
+          />) :
+          (<ResponsiveTypography variant="h1"/>)}
           </Grid>
           <Grid item >
             <Typography variant="h5" component="h2" gutterBottom sx={{  }}>

@@ -133,13 +133,22 @@ export const modules = `
     }
   },
 `
-export const modulestest = `
-  _type == 'aboutsection' => {
-    "test": {
+export const footermodule = `
+brandname,
+footersocial,
+footerrowbuilder[]{
+  _type == 'footerrow' => {
+    "footerrow": {
       _type,
       _key,
-      aboutTitle,
-      body,
+      metaTitle,
+      linkbuilder[]{
+        _type == 'footerlink' =>{
+          linkname,
+          url,
+        }
+      },
     }
+},
 },
 `

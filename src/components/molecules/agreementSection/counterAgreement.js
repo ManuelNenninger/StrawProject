@@ -86,7 +86,7 @@ export default function BoxSx() {
                 Jeder Strohhalm spart Plastik.
               </Typography>
             </Grid>
-            <Grid item ref={ref1} sx={{  }}>
+            <Grid item ref={ref1} xs={12} sx={{  }}>
               <Counter
                 numberOne={numberOne}
                 numberTwo={numberTwo}

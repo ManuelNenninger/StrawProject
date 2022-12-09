@@ -3,12 +3,13 @@ import client from '../client'
 import groq from 'groq'
 // import SeoHead from "../src/components/seoComponents/seoHead";
 // import { urlFor } from "../lib/sanity"
-import { modules, modulestest } from '../data/queries'
-
+// import Modulepicker from "../src/components/templates/modules/modulepicker"
+import { modules, modulestest, footermodule } from '../data/queries'
 
 export default function Home(props) {
-
+  let {footer} = props;
   //let {metaDesc, metaTitle, shareDesc, shareTitle, shareGraphic} = props?.pages?.seo;
+  
   return (
     <>
       {/*<SeoHead
@@ -19,6 +20,10 @@ export default function Home(props) {
         ogImageUrl={shareGraphic && urlFor(shareGraphic).url()}
       />*/}
       <HomePage {...props}/>
+      {/*props.pages.pageBuilder.map(function(obj, index){
+        console.log(obj);
+        return <Modulepicker moduleName={Object.keys(obj)[0]} content={obj}/
+      })*/}
     </>
   )
 }
@@ -40,11 +45,16 @@ export async function getStaticProps() {
         seo,
       }
     `)
-    // console.log("Neue Daten!");
-    // console.log(pages.seo);
+    const footer = await client.fetch(groq`
+      *[_type == "footer"][0]{
+        ${footermodule}
+      }
+    `)
+
     return {
       props: {
-        pages
+        pages,
+        footer,
       },
       revalidate: process.env.SANITY_REVALIDATE_SECRET ? parseInt(process.env.SANITY_REVALIDATE_SECRET) : parseInt(86400),
     }

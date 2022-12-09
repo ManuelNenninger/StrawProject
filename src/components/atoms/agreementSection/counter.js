@@ -37,15 +37,15 @@ export default function Counter({
             }
           }}
         >
-          <Grid item>
+          <Grid xs={3} item>
             <Typography
               variant="h4"
               sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
             >
-                {numberThree}
+              {numberThree}
             </Typography>
           </Grid>
-          <Grid item >
+          <Grid xs={3} item >
           <Typography
             variant="h4"
             sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
@@ -53,7 +53,7 @@ export default function Counter({
             {numberTwo}
           </Typography>
           </Grid>
-          <Grid item >
+          <Grid xs={3} item >
           <Typography
             variant="h4"
             sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}
@@ -61,7 +61,7 @@ export default function Counter({
             {numberOne}
           </Typography>
           </Grid>
-          <Grid item >
+          <Grid xs={3} item >
           <Typography
             variant="h4"
             sx={{color: theme.palette.secondary.main, fontSize: {xs: "1.25rem", md: "2.125rem"}}}

@@ -18,7 +18,8 @@ export default function BoxSx(props) {
   // let { businessInfoContent } = value.content;
   const ref1 = useRef(null);
   const isInViewport = useIsInViewport(ref1);
-  let {sectionTitle="", sectionDescribtion="", priceinfobuilder=[] } = props.content;
+  let {content={}} = props;
+  let {sectionTitle="Lorem Ipsum", sectionDescribtion=" Lorem Ipsum Description", priceinfobuilder=[{pricecarddescribtion: "Test Desc", pricecardprice: "Test price", pricecardtitle: "test"}] } = content;
   let {pricecarddescribtion="", pricecardprice="", pricecardtitle="" } = priceinfobuilder[0];
 
   const handleClickOpen = () => {

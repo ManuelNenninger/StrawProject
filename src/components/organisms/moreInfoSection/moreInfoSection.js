@@ -14,7 +14,16 @@ import {ptComponents, urlFor} from "../../../../lib/sanity";
 
 export default function MoreInfoSection(props) {
   const theme = useTheme();
-  let {faqbuilder, alignment, faqsectiontitle, mainImage} = props.content;
+  let {content={}} = props;
+  let {
+    faqbuilder=[{
+      title: "Lorem Ipsum",
+      body: []
+    }],
+    alignment="rightPicture",
+    faqsectiontitle="Lorem Ipsum",
+    mainImage
+    } = content;
 
 const AccordionComponent = () => {
   return (
@@ -33,10 +42,17 @@ const AccordionComponent = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-            <PortableText
+            { body.length !== 0 ?
+              <PortableText
               value={body}
               components={ptComponents}
-            />
+              />
+              :
+              <Typography variant="subtitle2" gutterBottom>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Typography>
+            }
             </Typography>
           </AccordionDetails>
         </Accordion >
@@ -75,7 +91,7 @@ const AccordionComponent = () => {
           <Grid item sx={{pb: 5}}>
             {" "}
             <Typography variant="h3" gutterBottom>
-              Fragen?
+              {faqsectiontitle}
             </Typography>{" "}
           </Grid>
           <Grid item xs={12} sx={{  width: "100%" }}>
